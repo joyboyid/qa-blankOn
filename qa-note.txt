@@ -1,0 +1,9 @@
+Ada beberapa framework dan alat khusus yang digunakan untuk menguji ekosistem Linux:
+1. Pengujian Otomatisasi Sistem: 
+    Pelajari Ansible atau SaltStack untuk manajemen konfigurasi dan pengujian lingkungan.
+2. Kernel & Driver Testing: 
+    Jika ingin masuk ke level rendah (low-level),pelajari LTP (Linux Test Project) dan kdump.
+3. Performance/Stress Testing:
+    Pelajari alat seperti stress-ng, sysbench, atau fio untuk menguji ketahanan sistem.
+4. Virtualisasi & Kontainer:
+    Kuasai Docker, KVM, atau VirtualBox karena Anda akan sering membuat dan menghancurkan lingkungan uji coba (testbeds).
