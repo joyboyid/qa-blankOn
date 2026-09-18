@@ -82,7 +82,7 @@ hostnamectl
 | 3.3  | Bahasa UI default masuk akal (id/en)        | PASS   |                   |
 | 3.4  | Keyboard: huruf, angka, tanda `-` `/` `'`   | PASS   |                   |
 | 3.5  | Layout Indonesia tidak salah jadi Arabic    | PASS   |                   |
-| 3.6  | Jam dan zona waktu                          | FAIL   | harus sync manual |
+| 3.6  | Jam dan zona waktu                          | FAIL   | **Live ISO**: jam UTC, ~8 jam mundur vs WITA; harus sync manual. Bukan temuan pasca-install. |
 | 3.7  | Terminal bisa dibuka                        | PASS   |                   |
 | 3.8  | File manager bisa dibuka, isi home terlihat | PASS   |                   |
 | 3.9  | Pengaturan (Settings) bisa dibuka           | PASS   |                   |
@@ -137,7 +137,7 @@ Skenario **Erase disk** harus lulus. Ini syarat Alpha.
 | 6.1  | Tombol Install / ikon Calamares ada      | PASS   |            |
 | 6.2  | Calamares terbuka (butuh sudo)           | PASS   | tanpa sudo |
 | 6.3  | Pilih Bahasa Indonesia, teks tidak rusak | PASS   |            |
-| 6.4  | Lokasi: Asia/Jakarta                     | Utc    |            |
+| 6.4  | Lokasi: Asia/Jakarta                     | PASS   | Calamares menerapkan zona; jam UTC hanya di sesi live (3.6) |
 | 6.5  | Keyboard: Indonesian, tes di kotak uji   | PASS   |            |
 | 6.6  | Partisi: Erase disk                      | PASS   |            |
 | 6.7  | Buat user + password                     | PASS   |            |
@@ -169,6 +169,7 @@ Lepas ISO di Settings → Storage sebelum Start, atau di prompt “please remove
 | 7.6 | `sudo -v` menerima password                   | PASS   |         |
 | 7.7 | Hostname sesuai isian installer               | PASS   |         |
 | 7.8 | `/etc/os-release` menulis BlankOn / Sinambung | PASS   |         |
+| 7.9 | Jam/zona setelah install = Asia/Jakarta       | PASS   | setelah install jam sync sesuai zona; kutu UTC hanya di live |
 
 ```bash
 cat /etc/os-release
@@ -276,13 +277,13 @@ Centang satu:
 - [x] **Lulus sesi wajib** (bagian 2, 6, 7, 8.1): ISO ini boleh dipakai tester lain
 - [ ] **Gagal blocker**: tidak boot / tidak bisa install / tidak bisa login
 - [ ] **Gagal major**: desktop/update/app inti rusak
-- [x] **Hanya minor**: terjemahan, UI, hover, kosmetik — plus jam/zona UTC (lihat catatan)
+- [x] **Hanya minor**: terjemahan, UI, live timezone UTC (pasca-install OK), wiki Praya
 
 Tiket GitHub yang dibuka:
 
 | No  | Judul                                                     | URL    | Severity          |
 | --- | --------------------------------------------------------- | ------ | ----------------- |
-| 1   | (usulkan) Zona waktu tetap UTC setelah pilih Asia/Jakarta | belum  | Major/Minor       |
+| 1   | (usulkan) Live ISO timezone default UTC                   | belum  | Minor/Major       |
 | 2   | (jangan dulu) First boot failed — optical drive empty     | jangan | bukan kutu distro |
 | 3   | (usulkan) Wiki Praya: `praya@blankonlinux.id` tidak ada   | belum  | Docs/Minor        |
 
@@ -291,7 +292,7 @@ Catatan bebas:
 ```
 Review 18 Sep 2026:
 - Sesi wajib lulus di VM blankon-qa-1 (user blankon) dan VM BlankOn (user vbox).
-- FAIL nyata: jam guest ~8 jam mundur (01:xx vs host 09:xx WITA) = timezone UTC, selaras 6.4 "Utc".
+- FAIL nyata: jam **live ISO** UTC (~8 jam mundur vs WITA). Setelah install (7.9) jam sync sesuai zona — PASS.
 - 2.1 "first boot failed": screenshot menunjukkan Optical Drive Empty + EFI gagal load HDD kosong. Itu VirtualBox, bukan ISO. Lampirkan hanya jika ISO sudah terpasang dan tetap gagal.
 - fail-to-sync.png isinya apt update SUKSES (arsip-dev Hit). Nama file menyesatkan; yang gagal adalah sync jam.
 - Audio/video PASS: YouTube mutar, rekaman ada audio (mean -23.5 dB).

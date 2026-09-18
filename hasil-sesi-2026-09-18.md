@@ -24,24 +24,26 @@ Keduanya: **BlankOn Linux 26.0 Sinambung**, kernel `7.1.12+deb14-amd64`.
 
 ## Temuan yang layak tiket
 
-### 1. Jam / zona waktu tetap UTC — 3.6 FAIL, 6.4 “Utc”
+### 1. Live ISO timezone UTC — 3.6 FAIL (bukan pasca-install)
+
+Mode: **live**, dikonfirmasi tester. `fail to sync.png` memakai `file:/run/live/medium`.
 
 Bukti:
 
 - Guest top-bar **01:17 / 01:24 / 01:53**
 - Host (WITA, UTC+8) **09:08 / 09:24 / 09:53**
-- Selisih pas **8 jam** → sistem di UTC, bukan Asia/Jakarta
-- `hostnamectl` menampilkan Firmware Date VirtualBox `2006-12-01` (itu quirk VBox, bukan penyebab 8 jam)
+- Selisih pas **8 jam** → live session di UTC
+- Firmware Date 2006 di `hostnamectl` = quirk EFI VirtualBox, bukan penyebab 8 jam
 
-Ini kutu installer/Calamares kalau langkah Lokasi memang dipilih Jakarta. Severity: **major untuk distro Indonesia**, bukan blocker (masih bisa dipakai setelah `timedatectl set-timezone Asia/Jakarta`).
+Setelah install (7.9): jam **sudah sync sesuai zona**. Calamares OK. Jangan tiket installer.
 
-Perintah konfirmasi di guest sebelum buka tiket:
+Severity: minor — default live UTC (lazim di Debian live); BlankOn mungkin ingin default Jakarta di sesi coba.
+
+Konfirmasi di **sesi live** sebelum tiket:
 
 ```bash
 timedatectl
-timedatectl show
 cat /etc/timezone
-ls -l /etc/localtime
 ```
 
 ### 2. Bahasa campur (minor, dari sesi VM `BlankOn`)
@@ -98,33 +100,6 @@ APT guest mengarah ke `http://arsip-dev.blankonlinux.id/sinambung/` plus Mozilla
 
 ## Kirim ke tim
 
-Centang: **Lulus sesi wajib** + laporkan jam/zona. Opsional: tiket docs Praya (UUID ekstensi tidak ada).
+Centang: **Lulus sesi wajib** + laporkan jam **live ISO** (bukan pasca-install). Opsional: tiket docs Praya.
 
-Draft tiket jam:
-
-```markdown
-## Ringkasan
-Setelah pilih lokasi Asia/Jakarta di Calamares, jam sistem tetap UTC (~8 jam mundur di WITA).
-
-## Lingkungan
-- ISO: blankon-live-image-amd64.hybrid.iso (jahitan ~17 Sep 2026)
-- VM: VirtualBox, EFI, blankon-qa-1
-- Guest: BlankOn Linux 26.0 Sinambung
-
-## Langkah
-1. Install, lokasi Asia/Jakarta
-2. Boot ke sistem terpasang
-3. Bandingkan jam guest vs host
-
-## Diharapkan
-Jam dan timezone Asia/Jakarta.
-
-## Terjadi
-Top-bar guest 01:xx saat host 09:xx WITA.
-6.4 checklist: zona tercatat Utc.
-
-## Bukti
-- img/test2/bio-blankon.png
-- img/test3-5/fail to sync.png (jam 01:24 vs host 09:24)
-- output `timedatectl` (lampirkan)
-```
+Draft tiket: lihat `qa/format-laporan.md` Issue A (judul: Live ISO timezone UTC).

@@ -34,7 +34,8 @@ Sesi wajib: LULUS
 - Firefox/YouTube/audio OK
 
 Kutu:
-1. Jam tetap UTC setelah pilih Jakarta (8 jam mundur di WITA)
+1. Live ISO: jam/zona UTC (~8 jam mundur di WITA), harus sync manual
+   Setelah install: jam sudah sesuai zona (bukan kutu Calamares)
 2. Wiki Praya: gnome-extensions praya@blankonlinux.id tidak ada
 
 Bukan kutu:
@@ -100,51 +101,47 @@ Minor  = terjemahan, wiki usang, UI
 
 ## 3. Siap tempel — dari sesi 18 Sep 2026
 
-### Issue A — jam/zona (utama)
+### Issue A — jam/zona di **live ISO** (bukan pasca-install)
 
-Judul: `Calamares: timezone tetap UTC setelah pilih Asia/Jakarta`
+Judul: `Live ISO: timezone default UTC, jam ~8 jam mundur di WITA`
 
 ```markdown
 ## Ringkasan
-Setelah instalasi dengan lokasi Asia/Jakarta, jam sistem tetap UTC (sekitar 8 jam mundur di WITA).
+Sesi live jahitan Sinambung memakai timezone UTC. Jam di desktop ~8 jam mundur dibanding WITA, harus disetel manual. Ini diamati di live, **bukan** setelah instalasi.
 
 ## Lingkungan
 - ISO: `blankon-live-image-amd64.hybrid.iso` (zsync jahitan ~17 Sep 2026)
-- VM: VirtualBox 7.2, EFI, 4 GB RAM, 2 CPU — `blankon-qa-1`
-- Mode: hasil install
-- Guest: BlankOn Linux 26.0 Sinambung (`VERSION_CODENAME=sinambung`)
-- Kernel: `7.1.12+deb14-amd64`
-- User: `blankon`
+- VM: VirtualBox 7.2, EFI — `blankon-qa-1`
+- Mode: **Live** (bukan sistem terpasang)
+- Bukti live: `apt` memakai `file:/run/live/medium`
+- Guest: BlankOn Linux 26.0 Sinambung
+- User live: `blankon`
 
 ## Langkah repro
-1. Boot ISO (EFI), install Calamares, pilih Bahasa Indonesia.
-2. Lokasi: Asia/Jakarta.
-3. Erase disk, buat user, selesai, reboot ke disk (ISO dilepas).
-4. Bandingkan jam di top-bar guest vs jam host.
+1. Boot ISO (EFI), pilih Live / Try, sampai desktop.
+2. Jangan install dulu.
+3. Lihat jam di top-bar, bandingkan dengan jam host (WITA).
+4. (opsional) `timedatectl`
 
 ## Diharapkan
-Timezone `Asia/Jakarta`, jam guest sama dengan WITA.
+Live session default `Asia/Jakarta` (distro Indonesia), jam guest ≈ jam host WITA.
 
 ## Terjadi
-Jam guest 01:xx saat host 09:xx WITA (selisih pas 8 jam → UTC).
-Langkah lokasi di checklist tercatat sebagai Utc.
+Jam guest 01:17 / 01:24 / 01:53 saat host 09:08 / 09:24 / 09:53 WITA (selisih 8 jam = UTC).
+Harus sync manual.
+
+Setelah install (Calamares, lokasi Jakarta): jam **sudah sync sesuai zona**. Kutu ini hanya di live.
 
 ## Bukti
-(lampirkan)
-- screenshot top-bar guest vs jam host
-- output:
-
-```
-timedatectl
-cat /etc/timezone
-ls -l /etc/localtime
-```
+- screenshot top-bar live vs jam host
+- `img/test2/bio-blankon.png`, `img/test3-5/fail to sync.png` (`file:/run/live/medium`)
+- output `timedatectl` di sesi live
 
 ## Severity
-Major (bukan blocker: masih bisa `timedatectl set-timezone Asia/Jakarta`)
+Minor. Setelah install jam sudah benar; hanya default sesi coba yang UTC.
 ```
 
-Sebelum submit, jalankan ketiga perintah itu di VM dan tempel outputnya.
+Sebelum submit, di **sesi live** (bukan setelah install) jalankan `timedatectl` dan tempel outputnya.
 
 ### Issue B — wiki Praya (opsional, docs)
 
