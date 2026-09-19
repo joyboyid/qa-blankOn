@@ -1,0 +1,102 @@
+[
+  {
+    "id": "QA-SAMPLE-001",
+    "category": "Installer",
+    "feature": "Fresh Installation",
+    "status": "untested",
+    "tester": null,
+    "version": "Replace with release",
+    "architecture": "amd64",
+    "notes": "Sample case: replace this record with an observed result."
+  },
+  {
+    "id": "QA-SAMPLE-002",
+    "category": "Boot",
+    "feature": "Live ISO Boot",
+    "status": "untested",
+    "tester": null,
+    "version": "Replace with release",
+    "architecture": "amd64",
+    "notes": "Sample case."
+  },
+  {
+    "id": "QA-SAMPLE-003",
+    "category": "WiFi",
+    "feature": "WiFi Connection",
+    "status": "untested",
+    "tester": null,
+    "version": "Replace with release",
+    "architecture": "amd64",
+    "notes": "Sample case."
+  },
+  {
+    "id": "QA-SAMPLE-004",
+    "category": "Bluetooth",
+    "feature": "Bluetooth Pairing",
+    "status": "blocked",
+    "tester": null,
+    "version": "Replace with release",
+    "architecture": "amd64",
+    "notes": "Sample case: add a note explaining the blocker."
+  },
+  {
+    "id": "QA-SAMPLE-005",
+    "category": "Audio",
+    "feature": "Audio Playback",
+    "status": "untested",
+    "tester": null,
+    "version": "Replace with release",
+    "architecture": "amd64",
+    "notes": "Sample case."
+  },
+  {
+    "id": "QA-SAMPLE-006",
+    "category": "Graphics",
+    "feature": "Display Resolution",
+    "status": "passed",
+    "tester": "sample-contributor",
+    "version": "Sample only",
+    "architecture": "amd64",
+    "notes": "Example result only; replace before publishing real status."
+  },
+  {
+    "id": "QA-SAMPLE-007",
+    "category": "Package Management",
+    "feature": "Install and Remove Package",
+    "status": "failed",
+    "tester": "sample-contributor",
+    "version": "Sample only",
+    "architecture": "amd64",
+    "notes": "Example failure only; replace before publishing real status."
+  },
+  {
+    "id": "QA-SAMPLE-008",
+    "category": "Desktop",
+    "feature": "Desktop Session",
+    "status": "untested",
+    "tester": null,
+    "version": "Replace with release",
+    "architecture": "arm64",
+    "notes": "Sample case."
+  },
+  {
+    "id": "QA-SAMPLE-009",
+    "category": "UEFI",
+    "feature": "UEFI Installation",
+    "status": "untested",
+    "tester": null,
+    "version": "Replace with release",
+    "architecture": "amd64",
+    "notes": "Sample case."
+  },
+  {
+    "id": "QA-SAMPLE-010",
+    "category": "Dual Boot",
+    "feature": "Dual Boot Installation",
+    "status": "untested",
+    "tester": null,
+    "version": "Replace with release",
+    "architecture": "amd64",
+    "notes": "Sample case."
+  }
+]
