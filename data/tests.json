@@ -1,102 +1,762 @@
 [
   {
-    "id": "QA-SAMPLE-001",
-    "category": "Installer",
-    "feature": "Fresh Installation",
-    "status": "untested",
-    "tester": null,
-    "version": "Replace with release",
-    "architecture": "amd64",
-    "notes": "Sample case: replace this record with an observed result."
-  },
-  {
-    "id": "QA-SAMPLE-002",
+    "id": "QA-20260918-3-2.1",
     "category": "Boot",
-    "feature": "Live ISO Boot",
-    "status": "untested",
-    "tester": null,
-    "version": "Replace with release",
-    "architecture": "amd64",
-    "notes": "Sample case."
-  },
-  {
-    "id": "QA-SAMPLE-003",
-    "category": "WiFi",
-    "feature": "WiFi Connection",
-    "status": "untested",
-    "tester": null,
-    "version": "Replace with release",
-    "architecture": "amd64",
-    "notes": "Sample case."
-  },
-  {
-    "id": "QA-SAMPLE-004",
-    "category": "Bluetooth",
-    "feature": "Bluetooth Pairing",
-    "status": "blocked",
-    "tester": null,
-    "version": "Replace with release",
-    "architecture": "amd64",
-    "notes": "Sample case: add a note explaining the blocker."
-  },
-  {
-    "id": "QA-SAMPLE-005",
-    "category": "Audio",
-    "feature": "Audio Playback",
-    "status": "untested",
-    "tester": null,
-    "version": "Replace with release",
-    "architecture": "amd64",
-    "notes": "Sample case."
-  },
-  {
-    "id": "QA-SAMPLE-006",
-    "category": "Graphics",
-    "feature": "Display Resolution",
+    "feature": "ISO terbaca, menu boot tampil",
     "status": "passed",
-    "tester": "sample-contributor",
-    "version": "Sample only",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
     "architecture": "amd64",
-    "notes": "Example result only; replace before publishing real status."
+    "notes": "PASS."
   },
   {
-    "id": "QA-SAMPLE-007",
-    "category": "Package Management",
-    "feature": "Install and Remove Package",
-    "status": "failed",
-    "tester": "sample-contributor",
-    "version": "Sample only",
+    "id": "QA-20260918-3-2.2",
+    "category": "Boot",
+    "feature": "Pilih Live / Try BlankOn sampai desktop",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
     "architecture": "amd64",
-    "notes": "Example failure only; replace before publishing real status."
+    "notes": "PASS."
   },
   {
-    "id": "QA-SAMPLE-008",
+    "id": "QA-20260918-3-2.3",
+    "category": "Boot",
+    "feature": "Tidak ada error GRUB sebelum splash",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS; laporan merujuk issue #110."
+  },
+  {
+    "id": "QA-20260918-3-2.4",
+    "category": "Boot",
+    "feature": "Splash / branding BlankOn tampil",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-2.5",
+    "category": "Boot",
+    "feature": "Desktop Praya/GNOME tampil tanpa loop login",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-2.6",
+    "category": "Boot",
+    "feature": "Resolusi layar wajar",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-2.7",
+    "category": "Boot",
+    "feature": "Mouse dan keyboard merespons",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-3.1",
     "category": "Desktop",
-    "feature": "Desktop Session",
-    "status": "untested",
-    "tester": null,
-    "version": "Replace with release",
-    "architecture": "arm64",
-    "notes": "Sample case."
+    "feature": "Panel/menu aplikasi terbuka",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
   },
   {
-    "id": "QA-SAMPLE-009",
+    "id": "QA-20260918-3-3.2",
+    "category": "Desktop",
+    "feature": "Teks menu terbaca",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-3.3",
+    "category": "Localization",
+    "feature": "Bahasa UI default masuk akal",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-3.4",
+    "category": "Desktop",
+    "feature": "Keyboard menerima huruf, angka, dan tanda baca",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-3.5",
+    "category": "Localization",
+    "feature": "Layout Indonesia tidak salah menjadi Arabic",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-3.6",
+    "category": "Desktop",
+    "feature": "Jam dan zona waktu live",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "Laporan menandai PASS, dengan catatan jam live memakai UTC sekitar 8 jam mundur dari WITA; sudah sinkron setelah install."
+  },
+  {
+    "id": "QA-20260918-3-3.7",
+    "category": "Desktop",
+    "feature": "Terminal bisa dibuka",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-3.8",
+    "category": "Desktop",
+    "feature": "File manager bisa dibuka dan home terlihat",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-3.9",
+    "category": "Desktop",
+    "feature": "Pengaturan bisa dibuka",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-3.10",
+    "category": "Desktop",
+    "feature": "Logout / lock screen",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-4.1",
+    "category": "Networking",
+    "feature": "Interface jaringan tampil",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-4.2",
+    "category": "Networking",
+    "feature": "Mendapat alamat IP",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-4.3",
+    "category": "Networking",
+    "feature": "Ping keluar ke blankonlinux.id",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-4.4",
+    "category": "Networking",
+    "feature": "Browser membuka blankonlinux.id",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-4.5",
+    "category": "Networking",
+    "feature": "apt update di live",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-5.1",
+    "category": "Applications",
+    "feature": "Browser terpasang dapat digunakan",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-5.2",
+    "category": "Applications",
+    "feature": "LibreOffice Writer mengetik dan menyimpan paragraf",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-5.3",
+    "category": "Applications",
+    "feature": "LibreOffice Calc mengisi tiga sel",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-5.4",
+    "category": "Applications",
+    "feature": "Pemutar gambar",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-5.5",
+    "category": "Audio",
+    "feature": "Pemutar audio/video",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-5.6",
+    "category": "Applications",
+    "feature": "Text editor",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-5.7",
+    "category": "Applications",
+    "feature": "Calculator",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-5.8",
+    "category": "Applications",
+    "feature": "Screenshot tool",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-5.9",
+    "category": "Applications",
+    "feature": "GNOME Extensions / Praya tidak error saat load",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-5.10",
+    "category": "Applications",
+    "feature": "Semua ikon menu bisa diklik",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-6.1",
+    "category": "Installer",
+    "feature": "Tombol Install / ikon Calamares ada",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-6.2",
+    "category": "Installer",
+    "feature": "Calamares terbuka",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-6.3",
+    "category": "Installer",
+    "feature": "Bahasa Indonesia di Calamares",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-6.4",
+    "category": "Installer",
+    "feature": "Lokasi Asia/Jakarta",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-6.5",
+    "category": "Installer",
+    "feature": "Keyboard Indonesian di kotak uji",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-6.6",
+    "category": "Installer",
+    "feature": "Partisi erase disk",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS; skenario wajib."
+  },
+  {
+    "id": "QA-20260918-3-6.7",
+    "category": "Installer",
+    "feature": "Membuat user dan password",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-6.8",
+    "category": "Installer",
+    "feature": "Ringkasan instalasi benar",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-6.9",
+    "category": "Installer",
+    "feature": "Proses instalasi selesai tanpa error",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-6.10",
+    "category": "Installer",
+    "feature": "Reboot tampil dan ISO dilepas",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-7.1",
+    "category": "Boot",
+    "feature": "GRUB tampil atau boot langsung",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-7.2",
+    "category": "Boot",
+    "feature": "Tidak stuck di emergency/initramfs",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-7.3",
+    "category": "Boot",
+    "feature": "Display manager / login tampil",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-7.4",
+    "category": "Boot",
+    "feature": "Login user installer",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-7.5",
+    "category": "Boot",
+    "feature": "Desktop tampil setelah install",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-7.6",
+    "category": "Security",
+    "feature": "sudo menerima password",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-7.7",
+    "category": "Boot",
+    "feature": "Hostname sesuai isian installer",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-7.8",
+    "category": "Boot",
+    "feature": "os-release menulis BlankOn / Sinambung",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-7.9",
+    "category": "Localization",
+    "feature": "Jam dan zona setelah install Asia/Jakarta",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS; jam sesuai zona setelah install."
+  },
+  {
+    "id": "QA-20260918-3-8.1",
+    "category": "Package Management",
+    "feature": "apt update tanpa NO_PUBKEY",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-8.2",
+    "category": "Package Management",
+    "feature": "Sumber APT mengarah ke arsip BlankOn",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-8.3",
+    "category": "Package Management",
+    "feature": "sudo apt dist-upgrade selesai",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS pada skenario utama."
+  },
+  {
+    "id": "QA-20260918-3-8.4",
+    "category": "Package Management",
+    "feature": "Tidak ada paket broken",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-8.5",
+    "category": "Package Management",
+    "feature": "Install paket uji vlc",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-8.6",
+    "category": "Package Management",
+    "feature": "Hapus paket uji vlc",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-8.7",
+    "category": "Package Management",
+    "feature": "Reboot setelah upgrade",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-9.1",
+    "category": "Applications",
+    "feature": "Browser dengan tiga tab termasuk video",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-9.2",
+    "category": "Applications",
+    "feature": "LibreOffice membuka dan menyimpan ODT",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-9.3",
+    "category": "Applications",
+    "feature": "Unduh berkas ke folder Unduhan",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-9.4",
+    "category": "Applications",
+    "feature": "Copy-paste file di file manager",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-9.5",
+    "category": "Audio",
+    "feature": "Audio speaker VM",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-9.6",
+    "category": "Hardware",
+    "feature": "Guest additions / clipboard host-guest",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-9.7",
+    "category": "Power Management",
+    "feature": "Suspend VM lalu resume",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-9.8",
+    "category": "Power Management",
+    "feature": "Shutdown bersih tanpa hang",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-9.9",
+    "category": "Applications",
+    "feature": "Start ulang dan login lagi",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-10.1",
+    "category": "Desktop",
+    "feature": "Panel/ekstensi Praya aktif",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-10.2",
+    "category": "Desktop",
+    "feature": "Kalender tidak memicu widget lain saat hover",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-10.3",
+    "category": "Desktop",
+    "feature": "Akses cepat / menu sesuai dokumentasi",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-10.4",
+    "category": "Desktop",
+    "feature": "Menonaktifkan Praya lalu login ulang",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "Laporan menandai PASS; catatan menyebut UUID panduan perlu disesuaikan karena ekstensi belum terpasang pada jahitan lama."
+  },
+  {
+    "id": "QA-20260918-3-11.1",
     "category": "UEFI",
-    "feature": "UEFI Installation",
-    "status": "untested",
-    "tester": null,
-    "version": "Replace with release",
+    "feature": "Install ulang dengan EFI mati (BIOS)",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
     "architecture": "amd64",
-    "notes": "Sample case."
+    "notes": "PASS."
   },
   {
-    "id": "QA-SAMPLE-010",
-    "category": "Dual Boot",
-    "feature": "Dual Boot Installation",
-    "status": "untested",
-    "tester": null,
-    "version": "Replace with release",
+    "id": "QA-20260918-3-11.2",
+    "category": "Installer",
+    "feature": "Install pada disk 20 GB",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
     "architecture": "amd64",
-    "notes": "Sample case."
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-11.3",
+    "category": "Installer",
+    "feature": "Install dengan RAM 2048 MB",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-11.4",
+    "category": "Installer",
+    "feature": "Manual partitioning dengan root dan swap",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260918-3-11.5",
+    "category": "Upgrade",
+    "feature": "APT arsip-dev lalu dist-upgrade",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
+    "architecture": "amd64",
+    "notes": "Laporan menandai PASS, tetapi catatan menyebut apt update aman dan dist-upgrade belum berhasil diselesaikan; perlu investigasi infra."
   }
 ]
