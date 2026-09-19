@@ -1,1 +1,975 @@
-[]
+[
+  {
+    "created_at": "2026-09-13T17:48:18Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/116",
+    "labels": [],
+    "number": 116,
+    "state": "open",
+    "title": "Improve tambal: scan arsip.boi as well",
+    "updated_at": "2026-09-13T17:48:18Z"
+  },
+  {
+    "created_at": "2026-09-13T17:47:19Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/115",
+    "labels": [],
+    "number": 115,
+    "state": "open",
+    "title": "Improve untung: diff arsip against arsip-dev too.",
+    "updated_at": "2026-09-13T17:47:19Z"
+  },
+  {
+    "created_at": "2026-09-13T17:46:12Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/114",
+    "labels": [],
+    "number": 114,
+    "state": "open",
+    "title": "Improve untung: grouping the diff",
+    "updated_at": "2026-09-19T11:28:32Z"
+  },
+  {
+    "created_at": "2026-09-13T13:06:41Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/113",
+    "labels": [],
+    "number": 113,
+    "state": "open",
+    "title": "Weekly 2026-09-13",
+    "updated_at": "2026-09-15T13:26:05Z"
+  },
+  {
+    "created_at": "2026-08-30T18:01:43Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/111",
+    "labels": [],
+    "number": 111,
+    "state": "closed",
+    "title": "IRGSH Repo sync against Trixie: no acceptable signature found",
+    "updated_at": "2026-09-13T11:16:40Z"
+  },
+  {
+    "created_at": "2026-08-26T16:34:57Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/110",
+    "labels": [],
+    "number": 110,
+    "state": "open",
+    "title": "GRUB is showing concerned error before boot's splash screen",
+    "updated_at": "2026-08-26T16:34:57Z"
+  },
+  {
+    "created_at": "2026-07-24T14:44:09Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/109",
+    "labels": [],
+    "number": 109,
+    "state": "closed",
+    "title": "I think I have a fix for the new daily ISOs not being published",
+    "updated_at": "2026-09-13T11:14:25Z"
+  },
+  {
+    "created_at": "2026-05-21T17:21:50Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/108",
+    "labels": [],
+    "number": 108,
+    "state": "closed",
+    "title": "Some app can't be opened via Praya but got no problem via GNOME launcher",
+    "updated_at": "2026-09-13T11:22:41Z"
+  },
+  {
+    "created_at": "2026-05-10T15:42:52Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/107",
+    "labels": [],
+    "number": 107,
+    "state": "open",
+    "title": "Customized Minimalist ISO",
+    "updated_at": "2026-05-12T11:57:24Z"
+  },
+  {
+    "created_at": "2026-05-10T15:40:54Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/106",
+    "labels": [],
+    "number": 106,
+    "state": "open",
+    "title": "Zoom sering hang di jahitan",
+    "updated_at": "2026-05-10T15:40:54Z"
+  },
+  {
+    "created_at": "2026-04-22T03:12:56Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/105",
+    "labels": [],
+    "number": 105,
+    "state": "closed",
+    "title": "Panel bar refinement - add system tray and application shortcut",
+    "updated_at": "2026-09-13T11:17:33Z"
+  },
+  {
+    "created_at": "2026-04-12T13:32:20Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/104",
+    "labels": [],
+    "number": 104,
+    "state": "closed",
+    "title": "Dokumen Profil Yayasan BlankOn",
+    "updated_at": "2026-09-13T11:15:40Z"
+  },
+  {
+    "created_at": "2026-04-12T13:11:25Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/103",
+    "labels": [],
+    "number": 103,
+    "state": "open",
+    "title": "Weekly 2026-04-12",
+    "updated_at": "2026-04-12T22:37:52Z"
+  },
+  {
+    "created_at": "2026-03-25T05:46:42Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/102",
+    "labels": [],
+    "number": 102,
+    "state": "closed",
+    "title": "Add emiritus sponsor list to credit them for the past contribution",
+    "updated_at": "2026-04-12T13:06:14Z"
+  },
+  {
+    "created_at": "2026-03-20T16:50:13Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/101",
+    "labels": [],
+    "number": 101,
+    "state": "closed",
+    "title": "Improve how we deploy services from Github to Rafi",
+    "updated_at": "2026-03-20T16:50:31Z"
+  },
+  {
+    "created_at": "2026-03-19T09:24:00Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/100",
+    "labels": [],
+    "number": 100,
+    "state": "closed",
+    "title": "Ptyxis can't open link automatically from terminal",
+    "updated_at": "2026-09-13T11:16:17Z"
+  },
+  {
+    "created_at": "2026-03-18T16:34:02Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/99",
+    "labels": [],
+    "number": 99,
+    "state": "closed",
+    "title": "Daftarkan flatpak dan flathub di live build dan pastikan siap pakai baik di live session maupun installed session",
+    "updated_at": "2026-03-21T15:49:06Z"
+  },
+  {
+    "created_at": "2026-03-15T05:24:59Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/98",
+    "labels": [],
+    "number": 98,
+    "state": "closed",
+    "title": "Susped by lid close not working in GDM",
+    "updated_at": "2026-03-15T05:26:41Z"
+  },
+  {
+    "created_at": "2026-03-08T04:49:13Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/97",
+    "labels": [],
+    "number": 97,
+    "state": "closed",
+    "title": "Instalasi kadang macet saat komputer offline",
+    "updated_at": "2026-03-18T16:33:00Z"
+  },
+  {
+    "created_at": "2026-03-07T14:58:03Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/96",
+    "labels": [],
+    "number": 96,
+    "state": "open",
+    "title": "Public relation: daftarkan merek dagang BlankOn dan BlankOn Linux",
+    "updated_at": "2026-03-07T15:01:04Z"
+  },
+  {
+    "created_at": "2026-03-07T13:28:27Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/95",
+    "labels": [],
+    "number": 95,
+    "state": "open",
+    "title": "Buka program magang resmi untuk SMK/kampus di bawah yayasan",
+    "updated_at": "2026-03-08T01:49:32Z"
+  },
+  {
+    "created_at": "2026-03-07T13:15:36Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/94",
+    "labels": [],
+    "number": 94,
+    "state": "open",
+    "title": "Public relation: contact Debian Census to renew data",
+    "updated_at": "2026-03-07T13:15:36Z"
+  },
+  {
+    "created_at": "2026-03-07T13:14:54Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/93",
+    "labels": [],
+    "number": 93,
+    "state": "open",
+    "title": "Public relation: Apply for Linux trademark sublicense",
+    "updated_at": "2026-03-07T13:15:13Z"
+  },
+  {
+    "created_at": "2026-03-07T13:14:29Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/92",
+    "labels": [],
+    "number": 92,
+    "state": "open",
+    "title": "Public relation: contact Distrowatch to renew data",
+    "updated_at": "2026-03-07T13:14:29Z"
+  },
+  {
+    "created_at": "2026-03-07T13:08:41Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/91",
+    "labels": [],
+    "number": 91,
+    "state": "open",
+    "title": "BlankOn goes to school setelah rilis",
+    "updated_at": "2026-03-07T13:08:41Z"
+  },
+  {
+    "created_at": "2026-03-05T17:47:44Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/90",
+    "labels": [],
+    "number": 90,
+    "state": "open",
+    "title": "Add feature to irgsh-repo to include asgen2reprepro signer",
+    "updated_at": "2026-03-05T17:47:44Z"
+  },
+  {
+    "created_at": "2026-03-04T22:32:20Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/89",
+    "labels": [],
+    "number": 89,
+    "state": "open",
+    "title": "Praya: activate on hover for calendar still have inconsistent behaviour",
+    "updated_at": "2026-03-04T22:33:04Z"
+  },
+  {
+    "created_at": "2026-03-02T16:44:45Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/88",
+    "labels": [],
+    "number": 88,
+    "state": "closed",
+    "title": "Can't install mesa-va-drivers",
+    "updated_at": "2026-03-21T15:53:22Z"
+  },
+  {
+    "created_at": "2026-02-22T13:10:18Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/87",
+    "labels": [],
+    "number": 87,
+    "state": "closed",
+    "title": "Proxmox Backup Service",
+    "updated_at": "2026-09-13T11:23:20Z"
+  },
+  {
+    "created_at": "2026-02-22T13:02:52Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/86",
+    "labels": [],
+    "number": 86,
+    "state": "closed",
+    "title": "Weekly 2026-02-22",
+    "updated_at": "2026-03-07T13:09:39Z"
+  },
+  {
+    "created_at": "2026-02-20T07:14:36Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/85",
+    "labels": [],
+    "number": 85,
+    "state": "closed",
+    "title": "Security Update Delivery",
+    "updated_at": "2026-09-13T11:24:40Z"
+  },
+  {
+    "created_at": "2026-02-20T07:00:24Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/84",
+    "labels": [],
+    "number": 84,
+    "state": "open",
+    "title": "Release blockers",
+    "updated_at": "2026-09-13T11:24:49Z"
+  },
+  {
+    "created_at": "2026-02-18T23:29:05Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/83",
+    "labels": [],
+    "number": 83,
+    "state": "open",
+    "title": "Rsync arsip-dev to arsip",
+    "updated_at": "2026-03-22T17:25:08Z"
+  },
+  {
+    "created_at": "2026-02-18T16:46:21Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/82",
+    "labels": [],
+    "number": 82,
+    "state": "closed",
+    "title": "Set default display scale to 100% instead of 125%",
+    "updated_at": "2026-02-27T14:10:00Z"
+  },
+  {
+    "created_at": "2026-02-18T16:39:14Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/81",
+    "labels": [],
+    "number": 81,
+    "state": "open",
+    "title": "Dummy tansitional package for balena-etcher",
+    "updated_at": "2026-02-18T16:39:14Z"
+  },
+  {
+    "created_at": "2026-02-18T16:35:30Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/80",
+    "labels": [],
+    "number": 80,
+    "state": "closed",
+    "title": "Brand Guidelines",
+    "updated_at": "2026-09-13T11:18:35Z"
+  },
+  {
+    "created_at": "2026-02-17T16:25:58Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/79",
+    "labels": [],
+    "number": 79,
+    "state": "closed",
+    "title": "Weekly 2026-02-15",
+    "updated_at": "2026-03-07T13:09:35Z"
+  },
+  {
+    "created_at": "2026-02-14T05:46:41Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/77",
+    "labels": [],
+    "number": 77,
+    "state": "open",
+    "title": "Lokakarya: Live-Build 101",
+    "updated_at": "2026-03-08T01:52:22Z"
+  },
+  {
+    "created_at": "2026-02-14T05:43:27Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/76",
+    "labels": [],
+    "number": 76,
+    "state": "open",
+    "title": "Lokakarya: Pemaketan Debian dengan IRGSH",
+    "updated_at": "2026-03-08T01:52:31Z"
+  },
+  {
+    "created_at": "2026-02-14T05:42:56Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/75",
+    "labels": [],
+    "number": 75,
+    "state": "open",
+    "title": "Lokakarya: Membuat GNOME Shell Extension",
+    "updated_at": "2026-02-14T05:42:56Z"
+  },
+  {
+    "created_at": "2026-02-14T05:40:41Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/74",
+    "labels": [],
+    "number": 74,
+    "state": "open",
+    "title": "Lokakarya: Membangun dan Merawat Repositori berbasis Debian",
+    "updated_at": "2026-03-08T01:52:51Z"
+  },
+  {
+    "created_at": "2026-02-11T15:51:02Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/73",
+    "labels": [],
+    "number": 73,
+    "state": "open",
+    "title": "Default font for the operating system",
+    "updated_at": "2026-02-11T15:51:02Z"
+  },
+  {
+    "created_at": "2026-02-08T18:41:27Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/72",
+    "labels": [],
+    "number": 72,
+    "state": "closed",
+    "title": "Enable ZRAM by default",
+    "updated_at": "2026-03-21T16:04:47Z"
+  },
+  {
+    "created_at": "2026-02-08T13:01:44Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/71",
+    "labels": [],
+    "number": 71,
+    "state": "closed",
+    "title": "Weekly 2026-02-08",
+    "updated_at": "2026-03-07T13:09:32Z"
+  },
+  {
+    "created_at": "2026-02-01T16:02:19Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/70",
+    "labels": [
+      "weekly"
+    ],
+    "number": 70,
+    "state": "closed",
+    "title": "Weekly - 2026-02-01",
+    "updated_at": "2026-03-07T13:09:42Z"
+  },
+  {
+    "created_at": "2026-01-25T13:06:28Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/68",
+    "labels": [
+      "weekly"
+    ],
+    "number": 68,
+    "state": "closed",
+    "title": "Weekly - 2026-01-25",
+    "updated_at": "2026-02-05T14:43:22Z"
+  },
+  {
+    "created_at": "2026-01-25T03:03:02Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/67",
+    "labels": [
+      "enhancement"
+    ],
+    "number": 67,
+    "state": "closed",
+    "title": "Enable zsync for ISO download",
+    "updated_at": "2026-01-25T15:59:03Z"
+  },
+  {
+    "created_at": "2026-01-22T19:28:58Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/66",
+    "labels": [
+      "organization"
+    ],
+    "number": 66,
+    "state": "open",
+    "title": "assess legacy issues on any repositories to revival tracker and clean it up if considered as stale",
+    "updated_at": "2026-01-22T19:28:58Z"
+  },
+  {
+    "created_at": "2026-01-22T18:02:01Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/65",
+    "labels": [],
+    "number": 65,
+    "state": "closed",
+    "title": "test issue to trigger \"add-to-project\" workflow .1",
+    "updated_at": "2026-01-22T18:02:45Z"
+  },
+  {
+    "created_at": "2026-01-22T17:55:00Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/63",
+    "labels": [],
+    "number": 63,
+    "state": "closed",
+    "title": "test issue to trigger \"add-to-project\" workflow",
+    "updated_at": "2026-01-22T18:02:58Z"
+  },
+  {
+    "created_at": "2026-01-22T17:23:47Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/61",
+    "labels": [
+      "development"
+    ],
+    "number": 61,
+    "state": "open",
+    "title": "Maintain AppStream Generator within our Reprepro repository",
+    "updated_at": "2026-01-22T18:45:35Z"
+  },
+  {
+    "created_at": "2026-01-22T17:19:48Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/60",
+    "labels": [
+      "enhancement"
+    ],
+    "number": 60,
+    "state": "closed",
+    "title": "test issue to trigger \"project\" workflow",
+    "updated_at": "2026-01-22T17:20:11Z"
+  },
+  {
+    "created_at": "2026-01-22T16:56:51Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/59",
+    "labels": [
+      "help wanted",
+      "organization",
+      "infrastructure"
+    ],
+    "number": 59,
+    "state": "closed",
+    "title": "Seeking for donation: NVME SSD 2TB for Revival server",
+    "updated_at": "2026-09-13T11:21:44Z"
+  },
+  {
+    "created_at": "2026-01-22T16:43:05Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/58",
+    "labels": [
+      "enhancement"
+    ],
+    "number": 58,
+    "state": "closed",
+    "title": "Add firmware-iwlwifi and firmware-intel-misc to live-build's firmware package list",
+    "updated_at": "2026-02-18T20:00:07Z"
+  },
+  {
+    "created_at": "2026-01-22T15:47:08Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/57",
+    "labels": [
+      "development"
+    ],
+    "number": 57,
+    "state": "closed",
+    "title": "Enable multiarch on live session and normal session to allow user install i386 packages",
+    "updated_at": "2026-02-18T20:01:01Z"
+  },
+  {
+    "created_at": "2026-01-21T16:22:49Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/56",
+    "labels": [
+      "development"
+    ],
+    "number": 56,
+    "state": "closed",
+    "title": "Unlike other stable distributions, installing VirtualBox does not guarantee that it will run properly",
+    "updated_at": "2026-02-18T19:59:05Z"
+  },
+  {
+    "created_at": "2026-01-21T14:29:45Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/55",
+    "labels": [
+      "development"
+    ],
+    "number": 55,
+    "state": "closed",
+    "title": "GNOME crashed when user is trying to connect a bluetooth device (headphone with mic) during Google Meet",
+    "updated_at": "2026-09-13T11:20:43Z"
+  },
+  {
+    "created_at": "2026-01-21T09:03:30Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/54",
+    "labels": [
+      "development"
+    ],
+    "number": 54,
+    "state": "open",
+    "title": "Update calamares-settings-blankon to implement swapfile on targetted root system",
+    "updated_at": "2026-01-24T15:27:46Z"
+  },
+  {
+    "created_at": "2026-01-20T13:57:56Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/53",
+    "labels": [
+      "weekly"
+    ],
+    "number": 53,
+    "state": "closed",
+    "title": "Weekly - 2026-01-18",
+    "updated_at": "2026-02-05T14:44:44Z"
+  },
+  {
+    "created_at": "2026-01-19T11:23:50Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/52",
+    "labels": [
+      "development"
+    ],
+    "number": 52,
+    "state": "open",
+    "title": "Update calamares-setting-blankon to follow blankon package convention",
+    "updated_at": "2026-01-20T14:21:34Z"
+  },
+  {
+    "created_at": "2026-01-19T05:34:05Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/51",
+    "labels": [
+      "enhancement"
+    ],
+    "number": 51,
+    "state": "closed",
+    "title": "Include more dev/debugging tool in base ISO",
+    "updated_at": "2026-02-18T19:57:02Z"
+  },
+  {
+    "created_at": "2026-01-19T05:20:00Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/50",
+    "labels": [
+      "development"
+    ],
+    "number": 50,
+    "state": "closed",
+    "title": "Update base-files to include logo.",
+    "updated_at": "2026-02-12T13:02:25Z"
+  },
+  {
+    "created_at": "2026-01-19T04:50:42Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/49",
+    "labels": [
+      "development"
+    ],
+    "number": 49,
+    "state": "closed",
+    "title": "The base ISO is missing fingerprint packages",
+    "updated_at": "2026-02-18T19:56:40Z"
+  },
+  {
+    "created_at": "2026-01-19T04:05:11Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/48",
+    "labels": [
+      "development"
+    ],
+    "number": 48,
+    "state": "closed",
+    "title": "Include Noto Sans in the ISO to support electron-based app like Lark",
+    "updated_at": "2026-02-18T20:02:17Z"
+  },
+  {
+    "created_at": "2026-01-18T16:29:13Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/47",
+    "labels": [
+      "development"
+    ],
+    "number": 47,
+    "state": "closed",
+    "title": "The installed OS does not bring the restricted-firmware repo component in its source.list",
+    "updated_at": "2026-02-18T19:55:44Z"
+  },
+  {
+    "created_at": "2026-01-18T14:29:26Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/46",
+    "labels": [
+      "development"
+    ],
+    "number": 46,
+    "state": "open",
+    "title": "Adopt blankon-live-build in IRGSH with explicit archive selection and safe worker execution",
+    "updated_at": "2026-09-15T05:18:55Z"
+  },
+  {
+    "created_at": "2026-01-11T13:11:46Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/45",
+    "labels": [
+      "weekly"
+    ],
+    "number": 45,
+    "state": "closed",
+    "title": "Weekly - 2026-01-11",
+    "updated_at": "2026-02-05T14:44:34Z"
+  },
+  {
+    "created_at": "2026-01-11T13:11:20Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/44",
+    "labels": [
+      "infrastructure"
+    ],
+    "number": 44,
+    "state": "open",
+    "title": "[OpSec] Research GoTeleport",
+    "updated_at": "2026-02-01T15:56:50Z"
+  },
+  {
+    "created_at": "2026-01-11T08:39:37Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/43",
+    "labels": [],
+    "number": 43,
+    "state": "closed",
+    "title": "DNS is not working inside the pbuilder's chroot",
+    "updated_at": "2026-01-11T12:37:47Z"
+  },
+  {
+    "created_at": "2026-01-10T09:29:01Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/42",
+    "labels": [],
+    "number": 42,
+    "state": "closed",
+    "title": "Yo",
+    "updated_at": "2026-01-10T09:35:04Z"
+  },
+  {
+    "created_at": "2026-01-10T09:10:51Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/41",
+    "labels": [],
+    "number": 41,
+    "state": "closed",
+    "title": "Test new issue",
+    "updated_at": "2026-01-10T09:10:58Z"
+  },
+  {
+    "created_at": "2026-01-10T08:59:33Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/40",
+    "labels": [],
+    "number": 40,
+    "state": "closed",
+    "title": "ok",
+    "updated_at": "2026-01-10T09:28:42Z"
+  },
+  {
+    "created_at": "2026-01-10T03:58:18Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/39",
+    "labels": [
+      "development"
+    ],
+    "number": 39,
+    "state": "closed",
+    "title": "The installed system still have Trixie repo registered",
+    "updated_at": "2026-01-20T13:34:55Z"
+  },
+  {
+    "created_at": "2026-01-08T06:43:59Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/38",
+    "labels": [
+      "enhancement"
+    ],
+    "number": 38,
+    "state": "open",
+    "title": "ARMv8 (aarch64) support?",
+    "updated_at": "2026-01-20T13:49:56Z"
+  },
+  {
+    "created_at": "2026-01-07T03:20:59Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/37",
+    "labels": [
+      "enhancement"
+    ],
+    "number": 37,
+    "state": "closed",
+    "title": "Deploy git notification service to improve contribution transparency",
+    "updated_at": "2026-02-18T19:55:20Z"
+  },
+  {
+    "created_at": "2026-01-06T16:53:45Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/36",
+    "labels": [
+      "documentation"
+    ],
+    "number": 36,
+    "state": "closed",
+    "title": "Domain mapping for blankonlinux.id and blankon.id",
+    "updated_at": "2026-02-18T19:54:59Z"
+  },
+  {
+    "created_at": "2026-01-06T15:01:49Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/35",
+    "labels": [
+      "infrastructure"
+    ],
+    "number": 35,
+    "state": "open",
+    "title": "[OpSec] Hardening Infrastructure & Secure Access Implementation",
+    "updated_at": "2026-01-20T14:21:52Z"
+  },
+  {
+    "created_at": "2026-01-05T15:04:10Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/34",
+    "labels": [
+      "infrastructure"
+    ],
+    "number": 34,
+    "state": "closed",
+    "title": "Revival server is down",
+    "updated_at": "2026-01-20T13:35:30Z"
+  },
+  {
+    "created_at": "2026-01-05T05:13:24Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/33",
+    "labels": [
+      "enhancement"
+    ],
+    "number": 33,
+    "state": "open",
+    "title": "irgsh(research): RPM support",
+    "updated_at": "2026-01-20T13:55:47Z"
+  },
+  {
+    "created_at": "2026-01-04T14:25:09Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/32",
+    "labels": [
+      "development"
+    ],
+    "number": 32,
+    "state": "closed",
+    "title": "Installation through Calamares failed",
+    "updated_at": "2026-01-20T13:29:11Z"
+  },
+  {
+    "created_at": "2026-01-04T07:11:01Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/31",
+    "labels": [
+      "infrastructure"
+    ],
+    "number": 31,
+    "state": "closed",
+    "title": "Selamatkan aset digital jadul dari cermin yang ada, terutama ISO",
+    "updated_at": "2026-02-18T19:54:10Z"
+  },
+  {
+    "created_at": "2025-12-28T12:56:25Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/30",
+    "labels": [
+      "weekly"
+    ],
+    "number": 30,
+    "state": "closed",
+    "title": "Weekly - 2025-12-28",
+    "updated_at": "2026-02-05T14:44:28Z"
+  },
+  {
+    "created_at": "2025-12-21T11:16:23Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/29",
+    "labels": [
+      "weekly"
+    ],
+    "number": 29,
+    "state": "closed",
+    "title": "Weekly - 2025-12-21",
+    "updated_at": "2026-02-05T14:44:15Z"
+  },
+  {
+    "created_at": "2025-12-14T13:09:19Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/28",
+    "labels": [
+      "weekly"
+    ],
+    "number": 28,
+    "state": "closed",
+    "title": "Weekly - 2025-12-14",
+    "updated_at": "2026-02-05T14:44:08Z"
+  },
+  {
+    "created_at": "2025-12-12T02:04:22Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/27",
+    "labels": [
+      "enhancement",
+      "development"
+    ],
+    "number": 27,
+    "state": "open",
+    "title": "HedgeDoc instance deployment on server",
+    "updated_at": "2026-01-20T14:07:11Z"
+  },
+  {
+    "created_at": "2025-12-07T13:18:41Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/26",
+    "labels": [
+      "development"
+    ],
+    "number": 26,
+    "state": "open",
+    "title": "Versi irgsh yang diinstall di mesin repo terpotong",
+    "updated_at": "2026-01-22T19:35:45Z"
+  },
+  {
+    "created_at": "2025-12-07T12:51:28Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/25",
+    "labels": [
+      "weekly"
+    ],
+    "number": 25,
+    "state": "closed",
+    "title": "Weekly - 2025-12-07",
+    "updated_at": "2026-02-05T14:43:40Z"
+  },
+  {
+    "created_at": "2025-12-01T16:30:37Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/16",
+    "labels": [
+      "infrastructure"
+    ],
+    "number": 16,
+    "state": "closed",
+    "title": "Pipeline irgsh macet",
+    "updated_at": "2026-01-20T13:30:57Z"
+  },
+  {
+    "created_at": "2025-12-01T16:16:48Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/15",
+    "labels": [
+      "workshop"
+    ],
+    "number": 15,
+    "state": "closed",
+    "title": "Kelas Git Kolaborasi",
+    "updated_at": "2025-12-02T15:47:14Z"
+  },
+  {
+    "created_at": "2025-11-30T14:25:41Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/13",
+    "labels": [
+      "infrastructure"
+    ],
+    "number": 13,
+    "state": "closed",
+    "title": "Spek mesin untuk builder",
+    "updated_at": "2026-01-22T16:54:22Z"
+  },
+  {
+    "created_at": "2025-11-30T14:22:36Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/12",
+    "labels": [
+      "infrastructure"
+    ],
+    "number": 12,
+    "state": "closed",
+    "title": "Spek mesin untuk lumbung paket",
+    "updated_at": "2026-01-22T16:55:58Z"
+  },
+  {
+    "created_at": "2025-11-28T16:04:05Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/6",
+    "labels": [
+      "organization"
+    ],
+    "number": 6,
+    "state": "closed",
+    "title": "Kumpulkan/pastikan akses/ambil alih kepemilikan akun-akun sosial media dan komunitas",
+    "updated_at": "2026-09-13T11:19:54Z"
+  },
+  {
+    "created_at": "2025-11-28T16:00:48Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/5",
+    "labels": [
+      "organization",
+      "infrastructure"
+    ],
+    "number": 5,
+    "state": "closed",
+    "title": "Pointing domain blankon.id ke blankon.github.io",
+    "updated_at": "2026-01-22T16:55:44Z"
+  },
+  {
+    "created_at": "2025-11-28T15:58:44Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/4",
+    "labels": [
+      "organization",
+      "infrastructure"
+    ],
+    "number": 4,
+    "state": "closed",
+    "title": "Alihkan kepemilikan domain blankon.id",
+    "updated_at": "2026-02-18T19:54:33Z"
+  },
+  {
+    "created_at": "2025-11-28T15:55:38Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/3",
+    "labels": [
+      "organization",
+      "infrastructure"
+    ],
+    "number": 3,
+    "state": "closed",
+    "title": "Kontak sponsor lama",
+    "updated_at": "2026-01-22T16:55:00Z"
+  },
+  {
+    "created_at": "2025-11-28T15:45:39Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/2",
+    "labels": [
+      "infrastructure"
+    ],
+    "number": 2,
+    "state": "closed",
+    "title": "Pasang dan setup server di colocation STT NF",
+    "updated_at": "2026-01-20T13:35:08Z"
+  },
+  {
+    "created_at": "2025-11-28T15:41:47Z",
+    "html_url": "https://github.com/BlankOn/revival/issues/1",
+    "labels": [
+      "infrastructure"
+    ],
+    "number": 1,
+    "state": "closed",
+    "title": "Initial Devbox VM",
+    "updated_at": "2026-01-20T14:34:18Z"
+  }
+]
