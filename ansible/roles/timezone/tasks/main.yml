@@ -1,0 +1,31 @@
+---
+# Timezone: zona harus mengikuti region penginstall (bukan UTC), timesyncd aktif.
+- name: Data timedatectl
+  command: timedatectl
+  register: tdt
+  changed_when: false
+
+- name: status systemd-timesyncd
+  command: systemctl is-active systemd-timesyncd
+  register: timesyncd
+  changed_when: false
+  failed_when: false
+
+- name: Ekstrak zona & waktu lokal dari timedatectl
+  set_fact:
+    tz_zone: "{{ (tdt.stdout | split('\n') | select('search', 'Time zone:') | first | default(''))
+                   | regex_replace('^.*Time zone: ', '') | regex_replace(' .*$', '') }}"
+    tz_local: "{{ (tdt.stdout | split('\n') | select('search', 'Local time:') | first | default(''))
+                   | regex_replace('^Local time: ', '') | trim }}"
+
+- name: Hasil — TIMEZONE
+  set_fact:
+    results: "{{ results + [
+      {'id':'TZ-1','area':'Timezone','kasus':'Zona = '+target_zone+' (regresi live UTC)',
+       'ok': tz_zone != 'UTC' and tz_zone != 'Etc/UTC' and tz_zone == target_zone,
+       'evidence': tz_zone + ' — lokal ' + tz_local},
+      {'id':'TZ-2','area':'Timezone','kasus':'systemd-timesyncd aktif (fix jahitan 20260919)',
+       'ok': timesyncd.stdout | trim == 'active',
+       'evidence': timesyncd.stdout | trim}
+    ] }}"
+    qa_meta: "{{ qa_meta | combine({'zone': tz_zone}) }}"

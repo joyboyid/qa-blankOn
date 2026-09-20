@@ -1,0 +1,31 @@
+---
+# Repositori & update: sumber APT mengarah ke arsip BlankOn, apt update lancar.
+- name: Cek sumber APT memuat arsip BlankOn
+  set_fact:
+    apt_has_blankon: "{{ (apt_sources.stdout | default('') | lower | regex_search('blankonlinux') is not none) }}"
+    apt_has_debian: "{{ (apt_sources.stdout | default('') | lower | regex_search('(security\\.)?debian\\.org') is not none) }}"
+
+- name: apt-get update (boleh gagal; dictatat)
+  command: apt-get update
+  register: apt_upd
+  changed_when: false
+  failed_when: false
+
+- name: Hasil — REPOSITORI
+  set_fact:
+    results: "{{ results + [
+      {'id':'APT-1','area':'Repo','kasus':'Sumber APT memuat arsip blankonlinux.id',
+       'ok': apt_has_blankon,
+       'evidence': apt_sources.stdout | default('') | regex_replace('\\n', '; ') | truncate(200)},
+      {'id':'APT-2','area':'Repo','kasus':'Tidak mengarah ke debian.org bawaan',
+       'ok': not apt_has_debian,
+       'evidence': 'debian.org = ' + (apt_has_debian | string)},
+      {'id':'APT-3','area':'Repo','kasus':'apt-get update selesai (rc=0)',
+       'ok': apt_upd.rc == 0,
+       'evidence': 'rc=' + (apt_upd.rc | string) + (' — ' + (apt_upd.stdout_lines[-1] | default('')) if apt_upd.rc != 0 else '')}
+    ] }}"
+
+- name: Sisa baris terakhir apt update (untuk bukti)
+  debug:
+    msg: "{{ apt_upd.stdout_lines[-3:] | default([]) }}"
+  when: apt_upd.rc != 0

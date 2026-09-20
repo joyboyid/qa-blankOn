@@ -1,0 +1,14 @@
+---
+# Variabel bersama untuk semua target BlankOn.
+# Override per-run dengan -e, mis.:
+#   ansible-playbook -i inventory/inventory.ini -l localhost playbooks/qa.yaml \
+#       -e target_zone=Asia/Jakarta -e jahitan=J20260919
+
+target_zone: "Asia/Makassar"   # WITA default; ganti Asia/Jakarta untuk WIB
+praya_min: "0.1.38"
+jahitan: "J2026xxx"            # isi sesuai jahitan ISO yang dites
+iso: "blankon-live-image-amd64.hybrid.iso"
+
+# Hasil akhir (diisi oleh role report) — jangan utak-atik di sini
+results: []
+qa_meta: {}

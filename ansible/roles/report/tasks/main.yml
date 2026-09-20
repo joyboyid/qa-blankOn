@@ -1,0 +1,27 @@
+---
+# Aggregasi: skor, JSON, laporan Markdown, verdict.
+- name: Hitung skor
+  set_fact:
+    total_ok: "{{ results | selectattr('ok', 'equalto', true)  | list | length }}"
+    total_fail: "{{ results | selectattr('ok', 'equalto', false) | list | length }}"
+
+- name: Tentukan path file hasil
+  set_fact:
+    results_path: "{{ results_file | default('/tmp/qa-results-' + (ansible_hostname | default('host')) + '.json') }}"
+
+- name: Tulis hasil JSON untuk laporan
+  copy:
+    content: "{{ {'meta': qa_meta, 'results': results} | to_nice_json }}"
+    dest: "{{ results_path }}"
+
+- name: Ringkasan per kasus
+  debug:
+    msg: "{{ item.ok | ternary('PASS','FAIL') }} [{{ item.id }}] {{ item.area }} — {{ item.kasus }} :: {{ item.evidence }}"
+  loop: "{{ results }}"
+
+- name: Verdict
+  assert:
+    that:
+      - total_fail == 0
+    success_msg: "LULUS — {{ total_ok }} PASS, 0 FAIL; JSON di {{ results_path }}"
+    fail_msg: "GAGAL — {{ total_fail }} FAIL (dari {{ results | length }} kasus); JSON di {{ results_path }}"

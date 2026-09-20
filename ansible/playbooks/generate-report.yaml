@@ -1,0 +1,42 @@
+---
+# QA BlankOn — render laporan Markdown dari JSON hasil tes (tanpa menjalankan tes lagi).
+# Cocok dipakai di controller setelah menarik file qa-results-*.json dari guest/VM:
+#   ansible-playbook -i inventory/inventory.ini -l localhost playbooks/generate-report.yaml \
+#       -e jahitan=J2026xxx -e results_file=/tmp/qa-results-J2026xxx.json
+
+- name: QA BlankOn — render laporan dari hasil JSON
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  become: false
+  vars:
+    jahitan: "auto"
+    results_file: "/tmp/qa-results.json"
+    out_file: ""
+  tasks:
+    - name: Baca file JSON hasil tes
+      slurp:
+        src: "{{ results_file }}"
+      register: slurp_result
+
+    - name: Terjemahkan JSON
+      set_fact:
+        payload: "{{ (slurp_result.content | b64decode) | from_json }}"
+
+    - name: Hitung skor + tentukan nama file output
+      set_fact:
+        ok_n: "{{ payload.results | selectattr('ok', 'equalto', true)  | list | length }}"
+        fail_n: "{{ payload.results | selectattr('ok', 'equalto', false) | list | length }}"
+        dest_file: "{{ (out_file | length > 0) | ternary(out_file, '/tmp/laporan-hasil-tes-' + (payload.meta.jahitan | default(jahitan)) + '.md') }}"
+
+    - name: Render laporan Markdown
+      template:
+        src: "../roles/report/templates/laporan-hasil-tes.j2"
+        dest: "{{ dest_file }}"
+      vars:
+        meta_out: "{{ payload.meta | default({}) }}"
+        results_out: "{{ payload.results | default([]) }}"
+
+    - name: Ringkasan
+      debug:
+        msg: "Laporan ditulis → PASS {{ ok_n }} · FAIL {{ fail_n }} — file: {{ dest_file }}"

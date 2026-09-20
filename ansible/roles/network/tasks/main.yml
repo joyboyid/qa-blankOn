@@ -1,0 +1,37 @@
+---
+# Jaringan: interface hidup, IP didapat, ping keluar.
+- name: Daftar interface
+  command: ip -br a
+  register: ip_a
+  changed_when: false
+
+- name: Daftar IP antar-muka
+  command: ip -4 addr show
+  register: ip4
+  changed_when: false
+
+- name: Ping keluar ke jahitan.blankonlinux.id
+  command: ping -c 3 -W 3 jahitan.blankonlinux.id
+  register: ping_out
+  changed_when: false
+  failed_when: false
+
+- name: Ekstrak alamat IPv4 pertama
+  set_fact:
+    first_ip: "{{ ip4.stdout | default('') | regex_search('inet ([0-9\\.]+)', '\\1') | first | default('?') }}"
+    ipv4_nonloopback: "{{ (ip4.stdout | default('')) | regex_replace('\\n', ' ') | regex_search('inet (10\\.|172\\.(1[6-9]|2[0-9]|3[01])\\.|192\\.168\\.)') | default(None) is not none }}"
+
+- name: Hasil — JARINGAN
+  set_fact:
+    results: "{{ results + [
+      {'id':'NET-1','area':'Jaringan','kasus':'Interface tampil (ip br a)',
+       'ok': (ip_a.stdout | default('')) != '',
+       'evidence': ip_a.stdout | default('') | regex_replace('\\n', '; ') | truncate(200)},
+      {'id':'NET-2','area':'Jaringan','kasus':'Dapat alamat IPv4 (bukan hanya loopback)',
+       'ok': ipv4_nonloopback,
+       'evidence': 'IP pertama: ' + first_ip},
+      {'id':'NET-3','area':'Jaringan','kasus':'Ping keluar jahitan.blankonlinux.id',
+       'ok': ping_out.rc == 0,
+       'evidence': 'rc=' + (ping_out.rc | string) + ' — ' + (ping_out.stdout_lines | first | default(''))}
+    ] }}"
+    qa_meta: "{{ qa_meta | combine({'ip': ip_a.stdout | default('?') | regex_replace('\\n', '; ') | truncate(120)}) }}"

@@ -28,17 +28,22 @@ Resume pekerjaan sesi ini agar mudah dilanjutkan.
 ## 3. Automasi QA dengan Ansible — DIMULAI
 
 - **Instalasi**: `~/venvs/ansible/` (ansible-core 2.21.4, Python 3.14). Jalankan via `~/venvs/ansible/bin/ansible-playbook`.
-- **File baru**: `qa/ansible/inventory.ini` + `qa/ansible/check-blankon.yaml`.
-- **Playbook**: tes otomatis 9 kasus (Timezone TZ-1/TZ-2, Praya PR-1..4, VLC VL-1..3) → output PASS/FAIL + `/tmp/qa-results.json`. Teruji jalan di host (Manjaro), menangkap FAIL dengan benar.
-- **Cara pakai di guest BlankOn**: `sudo apt install ansible-core`, lalu `ansible-playbook -i inventory.ini -c local check-blankon.yaml` (ganti `target_zone` sesuai wilayah).
-- **Catatan penting**: jangan cek timezone dengan `'UTC' in timedatectl` karena baris "Universal time" selalu mengandung UTC; baca field `Time zone:` saja.
+- **Struktur baru** (`qa/ansible/`, ber-role, siap pakai):
+  - `ansible.cfg`, `inventory/` (group `blankon`: target `localhost`/`vm`) + `group_vars/blankon.yml`
+  - `playbooks/qa.yaml` (semua role) + `playbooks/generate-report.yaml` (render laporan dari JSON)
+  - `roles/`: `base`, `timezone` (TZ-1/2), `praya` (PR-1..4), `vlc` (VL-1..3), `network` (NET-1..3), `repo` (APT-1..3), `report`
+  - `roles/report/templates/laporan-hasil-tes.j2` + `README.md`
+  - file lama `inventory.ini` + `check-blankon.yaml` sudah ditinggalkan (pakai yang baru)
+- **Teruji di host (Manjaro)**: playbook jalan penuh → JSON `/tmp/qa-results-<host>.json` + laporan MD `8 PASS · 7 FAIL` (FAIL wajar di non-BlankOn). Render laporan dari JSON juga jalan.
+- **Cara pakai di guest BlankOn**: `sudo apt install ansible-core`, salin folder `ansible/` ke guest, lalu `sudo ansible-playbook -i inventory/inventory.ini -l localhost playbooks/qa.yaml -e target_zone=Asia/Makassar -e jahitan=J2026xxx`. Render: `playbooks/generate-report.yaml -e jahitan=J2026xxx -e results_file=...`.
+- **Catatan penting**: jangan cek timezone dengan `'UTC' in timedatectl` karena baris "Universal time" selalu mengandung UTC; baca field `Time zone:` saja. Jangan pakai `is search(...)` di Jinja role (syntax error), pakai `regex_search(...) is not none`.
 
 ## 4. Next steps (saat lanjut)
 
-1. Commit + push hasil sesi 3 (file di poin 1) supaya dashboard GH Pages update.
+1. Commit + push hasil sesi 3 (file di poin 1) supaya dashboard GH Pages update — masih belum.
 2. Lanjut Ansible level berikutnya:
-   - Template Jinja → generate `laporan-hasil-tes-jahitan-*.md` dari `/tmp/qa-results.json`.
-   - SSH + banyak VM (lintas jahitan), lalu `community.virtualbox` untuk orkestrasi VM.
+   - ~~Template Jinja → generate laporan~~ → selesai via `generate-report.yaml`; uji di guest BlankOn sungguhan.
+   - SSH + banyak VM (aktifkan grup `blankon_vm` di `inventory/inventory.ini`), lalu `community.virtualbox` untuk orkestrasi VM.
    - Hubungkan ke `openQA` BlankOn.
 3. Periksa kutu #2 (timezone live) dan #3 (wiki Praya).
 

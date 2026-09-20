@@ -1,0 +1,33 @@
+---
+# Praya (shell GNOME khas BlankOn): ekstensi aktif, versi cukup, tanpa error.
+- name: Versi praya-gnome-shell-extension
+  set_fact:
+    praya_ver: "{{ ansible_facts.packages.get('praya-gnome-shell-extension', [{}])[0].version | default('TIDAK TERPASANG') }}"
+
+- name: gnome-extensions show praya
+  command: gnome-extensions show praya@blankonlinux.id
+  register: praya_ext
+  changed_when: false
+  failed_when: false
+
+- name: Error gnome-shell/praya di journal
+  shell: journalctl -b -p err --no-pager | grep -iE "praya|gnome-shell" || true
+  register: journal_praya
+  changed_when: false
+
+- name: Hasil — PRAYA
+  set_fact:
+    results: "{{ results + [
+      {'id':'PR-1','area':'Praya','kasus':'Ekstensi terpasang','ok': praya_ver != 'TIDAK TERPASANG',
+       'evidence': praya_ver},
+      {'id':'PR-2','area':'Praya','kasus':'Versi >= '+praya_min+' (improvement rc 2)',
+       'ok': praya_ver != 'TIDAK TERPASANG' and praya_ver is version(praya_min, '>='),
+       'evidence': praya_ver},
+      {'id':'PR-3','area':'Praya','kasus':'gnome-extensions show tanpa error',
+       'ok': praya_ext.rc == 0 and (praya_ext.stdout | lower) is search('state:'),
+       'evidence': (praya_ext.stdout | regex_replace('\\n', '; ') | truncate(140))},
+      {'id':'PR-4','area':'Praya','kasus':'Tidak ada error praya/gnome-shell di journal',
+       'ok': journal_praya.stdout == '',
+       'evidence': 'alur error: ' + journal_praya.stdout if journal_praya.stdout else 'kosong'}
+    ] }}"
+    qa_meta: "{{ qa_meta | combine({'praya': praya_ver}) }}"

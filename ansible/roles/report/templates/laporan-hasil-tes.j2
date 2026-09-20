@@ -1,0 +1,54 @@
+{% set n_total = results_out | length -%}
+{% set n_pass  = results_out | selectattr('ok', 'equalto', true)  | list | length -%}
+{% set n_fail  = results_out | selectattr('ok', 'equalto', false) | list | length -%}
+{% set os_pretty = meta_out.os_pretty | default('?') -%}
+{% set os_id     = meta_out.os_id     | default('?') -%}
+# Laporan hasil tes otomatis — BlankOn Linux
+
+|             |                |
+| ----------- | -------------- |
+| Jahitan     | {{ meta_out.jahitan   | default('?') }} |
+| Tanggal     | {{ meta_out.tanggal   | default('?') }} |
+| ISO         | {{ meta_out.iso       | default('?') }} |
+| Host        | {{ meta_out.hostname  | default('?') }} |
+| Kernel      | {{ meta_out.kernel    | default('?') }} |
+| OS          | {{ os_pretty }} ({{ os_id }}) |
+| Zona target | {{ meta_out.target_zone | default('?') }} |
+| Zona aktif  | {{ meta_out.zone       | default('?') }} |
+
+## Ringkasan
+
+|          | Jumlah |
+| -------- | ------ |
+| PASS     | {{ n_pass }} |
+| FAIL     | {{ n_fail }} |
+| Total    | {{ n_total }} |
+
+{% if n_fail == 0 -%}
+Hasil: **LULUS** — semua {{ n_total }} kasus PASS.
+{%- else -%}
+Hasil: **GAGAL** — {{ n_fail }} dari {{ n_total }} kasus FAIL (periksa tabel di bawah).
+{% endif %}
+
+{% if meta_out.apt_sources | default('') %}
+## Sumber paket aktif
+
+```
+{{ meta_out.apt_sources }}
+```
+{% endif %}
+
+## Hasil tes per area
+
+{% for area, items in results_out | groupby('area') %}
+### {{ area }}
+
+| ID  | Kasus | Hasil | Bukti |
+| --- | ----- | ----- | ----- |
+{% for r in items %}
+| {{ r.id }} | {{ r.kasus | replace('|', '\\|') }} | {{ r.ok | ternary('PASS', 'FAIL') }} | {{ r.evidence | replace('|', '\\|') }} |
+{% endfor %}
+{% endfor %}
+
+---
+*Dihasilkan otomatis oleh Ansible (playbook `playbooks/qa.yaml`).*

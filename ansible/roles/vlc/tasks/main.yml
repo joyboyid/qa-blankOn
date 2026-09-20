@@ -1,0 +1,28 @@
+---
+# VLC (pengganti Showtime): terpasang, Showtime/totem tidak ada, default handler video.
+- name: Versi vlc
+  set_fact:
+    vlc_ver: "{{ ansible_facts.packages.get('vlc', [{}])[0].version | default('TIDAK TERPASANG') }}"
+
+- name: Status totem / gnome-videos
+  set_fact:
+    showtime_ver: "{{ ansible_facts.packages.get('totem', ansible_facts.packages.get('gnome-videos', [{}]))[0].version | default('TIDAK ADA') }}"
+
+- name: Default handler video/mp4
+  command: xdg-mime query default video/mp4
+  register: mime
+  changed_when: false
+  failed_when: false
+
+- name: Hasil — VLC
+  set_fact:
+    results: "{{ results + [
+      {'id':'VL-1','area':'VLC','kasus':'vlc terpasang (ganti Showtime)','ok': vlc_ver != 'TIDAK TERPASANG',
+       'evidence': vlc_ver},
+      {'id':'VL-2','area':'VLC','kasus':'Showtime/totem tidak terpasang',
+       'ok': showtime_ver == 'TIDAK ADA', 'evidence': showtime_ver},
+      {'id':'VL-3','area':'VLC','kasus':'video/mp4 default = VLC',
+       'ok': (mime.stdout | trim | lower) is search('vlc'),
+       'evidence': mime.stdout | trim}
+    ] }}"
+    qa_meta: "{{ qa_meta | combine({'vlc': vlc_ver}) }}"
