@@ -56,11 +56,11 @@ VM `blankon-prayatest` dibuat: Debian 64-bit, ISO terpasang, NAT.
 
 ### 2. TimeZone and Gnome-Extentsion Priority test
 
-| ID  | Kasus                                         | Hasil |
-| --- | --------------------------------------------- | ----- |
-| 2.1 | Zona Waktu tidak mengikuti region penginstall | FAIL  |
-| 2.2 | Praya Gnome                                   | PASS  |
-| 2.3 | VLC menggantikan SGNOME Showtime              | PASS  |
+| ID  | Kasus                                          | Hasil |
+| --- | ---------------------------------------------- | ----- |
+| 2.1 | Zona Waktu tidak mengikuti region pascainstall | FAIL  |
+| 2.2 | Praya Gnome                                    | PASS  |
+| 2.3 | VLC menggantikan SGNOME Showtime               | PASS  |
 
 #### Sub Prayatest Gnome-shell
 

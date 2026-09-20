@@ -1,0 +1,147 @@
+---
+# QA BlankOn — verifikasi otomatis jahitan ISO
+#
+# Cara pakai:
+#   1. Salin folder qa/ansible ini KE DALAM guest BlankOn (live atau terpasang),
+#      misal lewat USB/share/curl dari host.
+#   2. Di dalam guest:
+#        sudo apt install ansible-core   # kalau belum ada
+#        ansible-playbook -i inventory.ini -c local check-blankon.yaml
+#
+# Prinsip: tiap kasus = 1 baris di `results`, jadi satu kasus FAIL tidak
+# menggagalkan kasus lain. Ringkasan + JSON hasil ditaruh di /tmp/qa-results.json.
+
+- name: QA BlankOn — cek jam/zona, Praya, VLC
+  hosts: all
+  gather_facts: false
+  vars:
+    target_zone: "Asia/Makassar"   # WITA; ganti Asia/Jakarta kalau WIB
+    praya_min: "0.1.38"
+    results: []
+  tasks:
+
+    - name: Kumpulkan fakta paket
+      package_facts:
+        manager: auto
+
+    - name: Data kernel
+      command: uname -r
+      register: kernel
+      changed_when: false
+
+    - name: Data os-release
+      command: cat /etc/os-release
+      register: os_rel
+      changed_when: false
+
+    # -------------------- 1. TIMEZONE --------------------
+    - name: timedatectl
+      command: timedatectl
+      register: tdt
+      changed_when: false
+
+    - name: status systemd-timesyncd
+      command: systemctl is-active systemd-timesyncd
+      register: timesyncd
+      changed_when: false
+      failed_when: false
+
+    - name: Ekstrak zona & waktu lokal dari timedatectl
+      set_fact:
+        tz_zone: "{{ (tdt.stdout | split('\n') | select('search', 'Time zone:') | first | default(''))
+                       | regex_replace('^.*Time zone: ', '') | regex_replace(' .*$', '') }}"
+        tz_local: "{{ (tdt.stdout | split('\n') | select('search', 'Local time:') | first | default(''))
+                       | regex_replace('^Local time: ', '') | trim }}"
+
+    - name: Hasil — TIMEZONE
+      set_fact:
+        results: "{{ results + [
+          {'id':'TZ-1','area':'Timezone','kasus':'Zona = '+target_zone+' (regresi live UTC)',
+           'ok': tz_zone != 'UTC' and tz_zone != 'Etc/UTC' and tz_zone == target_zone,
+           'evidence': tz_zone + ' — lokal ' + tz_local},
+          {'id':'TZ-2','area':'Timezone','kasus':'systemd-timesyncd aktif (fix jahitan 20260919)',
+           'ok': timesyncd.stdout | trim == 'active',
+           'evidence': timesyncd.stdout | trim}
+        ] }}"
+
+    # -------------------- 2. PRAYA --------------------
+    - name: Versi praya-gnome-shell-extension
+      set_fact:
+        praya_ver: "{{ ansible_facts.packages.get('praya-gnome-shell-extension', [{}])[0].version | default('TIDAK TERPASANG') }}"
+
+    - name: gnome-extensions show praya
+      command: gnome-extensions show praya@blankonlinux.id
+      register: praya_ext
+      changed_when: false
+      failed_when: false
+
+    - name: Error gnome-shell/praya di journal
+      shell: journalctl -b -p err --no-pager | grep -iE "praya|gnome-shell" || true
+      register: journal_praya
+      changed_when: false
+
+    - name: Hasil — PRAYA
+      set_fact:
+        results: "{{ results + [
+          {'id':'PR-1','area':'Praya','kasus':'Ekstensi terpasang','ok': praya_ver != 'TIDAK TERPASANG',
+           'evidence': praya_ver},
+          {'id':'PR-2','area':'Praya','kasus':'Versi >= '+praya_min+' (improvement rc 2)',
+           'ok': praya_ver != 'TIDAK TERPASANG' and praya_ver is version(praya_min, '>='),
+           'evidence': praya_ver},
+          {'id':'PR-3','area':'Praya','kasus':'gnome-extensions show tanpa error',
+           'ok': praya_ext.rc == 0 and (praya_ext.stdout | lower) is search('state:'),
+           'evidence': (praya_ext.stdout | regex_replace('\\n', '; ') | truncate(140))},
+          {'id':'PR-4','area':'Praya','kasus':'Tidak ada error praya/gnome-shell di journal',
+           'ok': journal_praya.stdout == '',
+           'evidence': 'alur error: ' + journal_praya.stdout if journal_praya.stdout else 'kosong'}
+        ] }}"
+
+    # -------------------- 3. VLC (pengganti Showtime) --------------------
+    - name: Versi vlc
+      set_fact:
+        vlc_ver: "{{ ansible_facts.packages.get('vlc', [{}])[0].version | default('TIDAK TERPASANG') }}"
+
+    - name: Status totem / gnome-videos
+      set_fact:
+        showtime_ver: "{{ ansible_facts.packages.get('totem', ansible_facts.packages.get('gnome-videos', [{}]))[0].version | default('TIDAK ADA') }}"
+
+    - name: Default handler video/mp4
+      command: xdg-mime query default video/mp4
+      register: mime
+      changed_when: false
+      failed_when: false
+
+    - name: Hasil — VLC
+      set_fact:
+        results: "{{ results + [
+          {'id':'VL-1','area':'VLC','kasus':'vlc terpasang (ganti Showtime)','ok': vlc_ver != 'TIDAK TERPASANG',
+           'evidence': vlc_ver},
+          {'id':'VL-2','area':'VLC','kasus':'Showtime/totem tidak terpasang',
+           'ok': showtime_ver == 'TIDAK ADA', 'evidence': showtime_ver},
+          {'id':'VL-3','area':'VLC','kasus':'video/mp4 default = VLC',
+           'ok': (mime.stdout | trim | lower) is search('vlc'),
+           'evidence': mime.stdout | trim}
+        ] }}"
+
+    # -------------------- RINGKASAN --------------------
+    - name: Hitung skor
+      set_fact:
+        total_ok: "{{ results | selectattr('ok', 'equalto', true)  | list | length }}"
+        total_fail: "{{ results | selectattr('ok', 'equalto', false) | list | length }}"
+
+    - name: Tulis hasil JSON untuk laporan
+      copy:
+        content: "{{ results | to_nice_json }}"
+        dest: /tmp/qa-results.json
+
+    - name: Ringkasan per kasus
+      debug:
+        msg: "{{ item.ok | ternary('PASS','FAIL') }} [{{ item.id }}] {{ item.area }} — {{ item.kasus }} :: {{ item.evidence }}"
+      loop: "{{ results }}"
+
+    - name: Verdict
+      assert:
+        that:
+          - total_fail == 0
+        success_msg: "LULUS — {{ total_ok }} PASS, 0 FAIL"
+        fail_msg: "GAGAL — {{ total_fail }} FAIL (dari {{ results | length }} kasus); detail di /tmp/qa-results.json"
