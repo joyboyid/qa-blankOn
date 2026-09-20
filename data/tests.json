@@ -758,5 +758,135 @@
     "version": "BlankOn Linux 26.0 Sinambung · 20260918-3",
     "architecture": "amd64",
     "notes": "Laporan menandai PASS, tetapi catatan menyebut apt update aman dan dist-upgrade belum berhasil diselesaikan; perlu investigasi infra."
+  },
+  {
+    "id": "QA-20260919-2.1",
+    "category": "Timezone",
+    "feature": "Zona waktu mengikuti region penginstall",
+    "status": "failed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260919",
+    "architecture": "amd64",
+    "notes": "Live masih UTC (tidak mengikuti region); sesudah install jam sudah sesuai zona. Bukti: bukti/img-issue-J20260919/FAILissu-UTC.png."
+  },
+  {
+    "id": "QA-20260919-2.2",
+    "category": "Praya",
+    "feature": "Praya Gnome-shell aktif",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260919",
+    "architecture": "amd64",
+    "notes": "PASS; praya-gnome-shell-extension 0.1.38-1 terpasang dan berjalan."
+  },
+  {
+    "id": "QA-20260919-2.3",
+    "category": "Aplikasi",
+    "feature": "VLC menggantikan GNOME Showtime",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260919",
+    "architecture": "amd64",
+    "notes": "PASS; vlc 3.0.23 terpasang, gnome-videos/totem tidak ada."
+  },
+  {
+    "id": "QA-20260919-2.2-1",
+    "category": "Praya",
+    "feature": "Start/menu utama langsung terbuka sekali klik (fix be07b475)",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260919",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260919-2.2-2",
+    "category": "Praya",
+    "feature": "Launcher: ketik nama app lalu Enter buka app (fix 122c8043)",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260919",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260919-2.2-3",
+    "category": "Praya",
+    "feature": "Buka app via panel Praya tidak gagal (tiket #108)",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260919",
+    "architecture": "amd64",
+    "notes": "PASS; Firefox lewat Praya terbuka."
+  },
+  {
+    "id": "QA-20260919-2.2-4",
+    "category": "Praya",
+    "feature": "Navigasi panel pakai keyboard: arrow + Enter (improvement rc 2)",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260919",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260919-2.2-5",
+    "category": "Praya",
+    "feature": "Hover kalender tidak men-trigger widget lain (tiket #89)",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260919",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260919-2.2-6",
+    "category": "Praya",
+    "feature": "Grid app tidak ada ikon missing (blankres dicabut)",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260919",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260919-2.3-1",
+    "category": "Aplikasi",
+    "feature": "Menu aplikasi ada VLC, ikon tidak missing, launch OK",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260919",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260919-2.3-2",
+    "category": "Aplikasi",
+    "feature": "VLC memutar berkas media (video/audio)",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260919",
+    "architecture": "amd64",
+    "notes": "PASS. Bukti: bukti/img-issue-J20260919/PASS-rec-20260920-090253.mp4, PASS-vlc.png."
+  },
+  {
+    "id": "QA-20260919-2.3-3",
+    "category": "Aplikasi",
+    "feature": "Default app video = vlc (xdg-mime query default video/mp4)",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260919",
+    "architecture": "amd64",
+    "notes": "PASS."
+  },
+  {
+    "id": "QA-20260919-2.3-4",
+    "category": "Aplikasi",
+    "feature": "Menutup VLC tidak crash",
+    "status": "passed",
+    "tester": "BOIM",
+    "version": "BlankOn Linux 26.0 Sinambung · 20260919",
+    "architecture": "amd64",
+    "notes": "PASS."
   }
 ]
