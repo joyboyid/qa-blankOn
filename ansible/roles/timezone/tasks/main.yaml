@@ -1,5 +1,5 @@
 ---
-- name: Read timedatectl
+- name: Baca timedatectl
   command: timedatectl
   register: tdc
   changed_when: false
