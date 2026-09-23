@@ -1,0 +1,29 @@
+---
+- name: Daftar interface
+  command: ip -br a
+  register: ip_a
+  changed_when: false
+
+- name: IPv4
+  command: ip -4 addr show
+  register: ip4
+  changed_when: false
+
+- name: Ping keluar
+  command: ping -c 3 -W 3 jahitan.blankonlinux.id
+  register: ping_out
+  changed_when: false
+  failed_when: false
+
+- name: Parse IP
+  set_fact:
+    first_ip: "{{ ip4.stdout | regex_search('inet ([0-9.]+)', '\\1') | first | default('?') }}"
+    has_lan_ip: "{{ ip4.stdout is search('inet (10\\.|172\\.(1[6-9]|2[0-9]|3[01])\\.|192\\.168\\.)') }}"
+
+- name: Hasil — JARINGAN
+  set_fact:
+    results: "{{ results + [
+      {'id':'NET-1','area':'Jaringan','kasus':'Interface tampil','ok': ip_a.stdout | length > 0,'evidence': ip_a.stdout | regex_replace('\\n', '; ') | truncate(200)},
+      {'id':'NET-2','area':'Jaringan','kasus':'Ada IPv4 non-loopback','ok': has_lan_ip,'evidence': 'IP: ' + first_ip},
+      {'id':'NET-3','area':'Jaringan','kasus':'Ping jahitan.blankonlinux.id','ok': ping_out.rc == 0,'evidence': 'rc=' + (ping_out.rc | string)}
+    ] }}"

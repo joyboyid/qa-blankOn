@@ -1,0 +1,23 @@
+---
+- name: Hitung skor
+  set_fact:
+    total_case: "{{ results | length }}"
+    total_pass: "{{ results | selectattr('ok') | list | length }}"
+    total_fail: "{{ results | rejectattr('ok') | list | length }}"
+    json_path: "/tmp/qa-results-{{ inventory_hostname }}.json"
+
+- name: Cetak tiap kasus
+  debug:
+    msg: "{{ (item.ok | bool) | ternary('PASS', 'FAIL') }} [{{ item.id }}] {{ item.kasus }} — {{ item.evidence }}"
+  loop: "{{ results }}"
+  loop_control:
+    label: "{{ item.id }}"
+
+- name: Tulis JSON
+  copy:
+    dest: "{{ json_path }}"
+    content: "{{ {'meta': qa_meta, 'results': results, 'total_pass': total_pass | int, 'total_fail': total_fail | int, 'total_case': total_case | int} | to_nice_json }}"
+
+- name: Verdict
+  debug:
+    msg: "{{ 'LULUS' if (total_fail | int) == 0 else 'GAGAL' }} — {{ total_fail }} FAIL dari {{ total_case }} kasus; JSON di {{ json_path }}"
