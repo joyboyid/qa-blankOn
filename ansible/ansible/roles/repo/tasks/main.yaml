@@ -1,0 +1,20 @@
+---
+- name: Cek string sumber APT
+  set_fact:
+    apt_has_blankon: "{{ (apt_sources.stdout | default('') | lower) is search('blankonlinux') }}"
+    apt_has_debian: "{{ (apt_sources.stdout | default('') | lower) is search('debian.org') }}"
+
+- name: apt-get update
+  command: apt-get update
+  register: apt_upd
+  changed_when: false
+  failed_when: false
+  become: true
+
+- name: Hasil — REPOSITORI
+  set_fact:
+    results: "{{ results + [
+      {'id':'APT-1','area':'Repo','kasus':'Sumber APT BlankOn','ok': apt_has_blankon,'evidence': apt_sources.stdout | default('') | regex_replace('\\n', '; ') | truncate(200)},
+      {'id':'APT-2','area':'Repo','kasus':'Bukan debian.org langsung','ok': not apt_has_debian,'evidence': 'debian.org=' + (apt_has_debian | string)},
+      {'id':'APT-3','area':'Repo','kasus':'apt-get update rc=0','ok': apt_upd.rc == 0,'evidence': 'rc=' + (apt_upd.rc | string)}
+    ] }}"

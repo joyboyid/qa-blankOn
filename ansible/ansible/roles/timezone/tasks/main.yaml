@@ -1,0 +1,33 @@
+---
+- name: Read timedatectl
+  command: timedatectl
+  register: tdc
+  changed_when: false
+
+- name: Status systemd-timesyncd
+  command: systemctl is-active systemd-timesyncd
+  register: tsync
+  changed_when: false
+  failed_when: false
+
+- name: Ambil field Time zone saja
+  set_fact:
+    timezone: "{{ tdc.stdout_lines | select('search', '^\\s*Time zone:') | first | default('') }}"
+
+- name: Hasil - TIME ZONE
+  set_fact:
+  results:"{{ results + [
+  {
+  'id': 'TZ-1',
+  'area': 'Timezone',
+  'kasus': 'Zona = ' + target_zone,
+  'ok' : target_zone in tz_line,
+  'evidence': tz_line
+  },
+  'id': 'TZ-2',
+  'area': 'Timezone',
+  'kasus': 'systemd-timesyncd aktif = ',
+  'ok' : tsync.rc == 0 and (tsync.stdout | trim) == 'active',
+  'evidence': tsync.stdout | trim
+  }
+  ] }}"

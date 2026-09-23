@@ -1,0 +1,19 @@
+---
+- name : QA Automation TEst - BlankOn
+  hosts: blankon
+  gather_facts: true
+  roles:
+    - role: base
+      tags: [base]
+    - role: timezone
+      tags: [timezone]
+    - role: praya
+      tags: [praya]
+    - role: vlc
+      tags: [vls]
+    - role: network
+      tags: [network]
+    - role: repo
+      tags: [repo]
+    - role: report
+      tags: [report, always]
