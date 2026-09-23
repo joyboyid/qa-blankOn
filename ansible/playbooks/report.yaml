@@ -4,8 +4,8 @@
   connection: local
   gather_facts: false
   vars:
-    results_file: /tmp/qa-results-localhost.json
-    out_file: "/tmp/laporan-hasil-tes-{{ jahitan | default('unknown') }}.md"
+    results_file: result/qa-results-localhost.json
+    out_file: "result/laporan-hasil-tes-{{ jahitan | default('unknown') }}.md"
   tasks:
     - name: Baca JSON
       slurp:
