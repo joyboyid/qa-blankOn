@@ -7,3 +7,55 @@ Ada beberapa framework dan alat khusus yang digunakan untuk menguji ekosistem Li
     Pelajari alat seperti stress-ng, sysbench, atau fio untuk menguji ketahanan sistem.
 4. Virtualisasi & Kontainer:
     Kuasai Docker, KVM, atau VirtualBox karena Anda akan sering membuat dan menghancurkan lingkungan uji coba (testbeds).
+
+Kernel & Driver Testing: 
+Oke, ini dulu. Dua alat low-level untuk QA kernel/distro. Saya buat ringkas + crash course praktisnya di BlankOn (Debian-based).
+1. LTP — Linux Test Project
+Apa itu: set uji kernel & pustaka sistem (SUSE/IBM/Oracle/dkk). Uji syscall, memori, I/O, filesystem, scheduler, net. Bukan uji GUI — uji perilaku kernel level rendah.
+Cara pakai (di guest BlankOn / VM):
+Opsi A — pakai paket dari repo Debian (paling cepat):
+sudo apt install ltp
+ls /usr/lib/ltp/runtest/        # daftar "scenario files" (syscalls, fs, mm, io, ...)
+cd /usr/lib/ltp
+sudo ./runltp -f syscalls            # jalankan semua tes syscall
+sudo ./runltp -f fs,mm,io            # gabungan scenario, dipisah koma
+sudo ./runltp -f syscalls -s read    # hanya tes yang namanya mengandung "read"
+Opsi B — build dari sumber (versi terbaru + align konfigurasi distro):
+sudo apt install build-essential git autoconf automake bison flex m4 \
+     pkg-config linux-headers-$(uname -r) libc6-dev
+git clone https://github.com/linux-test-project/ltp.git
+cd ltp && make autotools && ./configure && make -j$(nproc) && sudo make install
+/opt/ltp/runltp -f syscalls      # instalasi default ke /opt/ltp
+Membaca hasil:
+- /tmp/ltp.log — log tiap kasus (PASS/FAIL/TCONF/SKIP).
+- ltp-pan output ringkasan; -p bikin output "pretty".
+- Status tiap kasus: PASS, FAIL, TCONF (tidak bisa jalan, config tak didukung = bukan bug), SKIP.
+- TCONF ≠ FAIL — jangan dihitung sebagai kegagalan. Inilah yang sering disalahpahami.
+Untuk dimasukkan ke playbook Ansible Anda: jangan runltp seluruh suite di tiap jahitan (berjam-jam). Pilih subset stabil, mis. role baru yang jalankan runltp -f syscalls -s stat,open,getdents,mount,read,write dengan -t 10m, lalu ekstrak fail_count dari ltp.log.
+Peringatan: jangan jalankan di sistem produksi — growfiles, doio, iogen sengaja menekan I/O keras (bisa bikin kernel crash/panik — itu justru tujuannya).
+2. Kdump — menangkap & menganalisis kernel panic
+Apa itu: pakai kexec untuk menyiapkan "capture kernel" kedua di memori yang dicadangkan (crashkernel=). Saat kernel utama panic, ia langsung lompat ke capture kernel; memori kernel yang crash dibekukan & diverifikasi → disimpan sebagai vmcore di /var/crash, lalu reboot otomatis.
+Alur pikir (kenapa penting di QA BlankOn): jahitan baru sering crash/panic. LTP pun bisa memicu panic. Kdump = cara "merekam" panic tanpa kehilangan bukti → analisis dengan crash.
+Setup (Debian/BlankOn):
+sudo apt install kdump-tools crash      # crash = penganalisis vmcore
+sudo kdump-config show                  # cek status; USE_KDUMP harus 1
+sudo sed -i 's/^USE_KDUMP.*/USE_KDUMP=1/' /etc/default/kdump-tools   # aktifkan
+sudo kdump-config load                  # muat capture kernel (tanpa reboot)
+sudo kdump-config show                  # harus: "current state: ready to kdump"
+Butuh parameter crashkernel= di cmdline kernel (diatur otomatis oleh kdump-tools saat reboot). Kalau belum ada: crashkernel=256M di /etc/default/grub → sudo update-grub → reboot.
+Uji bahwa mekanismenya hidup (di VM, sengaja mem-bung!): pastikan dokumen penting sudah tersimpan:
+echo c | sudo tee /proc/sysrq-trigger     # paksa kernel panic
+Sistem reboot sendiri. Lalu:
+ls /var/crash/2026*/                       # ada folder + vmcore (atau dump.xxx)
+Analisis dengan crash:
+sudo apt install linux-image-$(uname -r)-dbgsym   # simbol debug kernel ; atau -dbg
+sudo crash /usr/lib/debug/boot/vmlinux-$(uname -r) /var/crash/*/dump.*
+Di dalam sesi crash>:
+crash> sys      # info kernel + string panic (mis. RIP, alamat buggy)
+crash> bt       # backtrace task yang crash — paling penting
+crash> bt -a    # backtrace semua CPU/task
+crash> log      # kernel ring buffer (dmesg) saat panic
+crash> ps       # proses yang hidup saat crash
+crash> dis RIP_alamat   # disassemble kode di titik kegagalan
+crash> mod      # modul yang termuat
+Bacaan cepat tanpa simbol: makedumpfile --dump-dmesg /proc/vmcore dmesg.txt (Debian: crash / vmcore-dmesg) — ambil log dmesg dari vmcore kalau hanya butuh pesan errornya.
