@@ -18,10 +18,10 @@
   register: host
   changed_when: false
 
-- name: Src APT aktif
-  shell: | cat /etc/apt/sources.list /etc/apt/sources.list.d/*.list /etc/apt/sources.list.d/*.sources 2>/dev/null \
-  | grep -vE '^\s*(#|$)' || true
+- name: Sumber APT aktif
+  shell: |
+    cat /etc/apt/sources.list /etc/apt/sources.list.d/*.list /etc/apt/sources.list.d/*.sources 2>/dev/null \
+      | grep -vE '^\s*(#|$)' || true
   register: apt_sources
   changed_when: false
   failed_when: false
-
