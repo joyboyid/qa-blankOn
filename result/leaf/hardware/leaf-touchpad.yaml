@@ -1,0 +1,19 @@
+feature: Touchpad
+category: Hardware
+
+tests:
+  - Detect touchpad
+  - Cursor movement
+  - Left / right click
+  - Tap to click
+  - Two-finger scroll
+  - Two-finger tap (right click)
+  - Gestures
+  - Palm rejection
+  - Configure in Settings
+
+status: untested
+
+tested_on: []
+
+issues: []

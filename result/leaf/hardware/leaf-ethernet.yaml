@@ -1,0 +1,17 @@
+feature: Ethernet
+category: Hardware
+
+tests:
+  - Detect Ethernet adapter
+  - Get IP via DHCP
+  - Connect to network
+  - Ping external host
+  - Disconnect and reconnect
+  - Reconnect after reboot
+  - Reconnect after suspend
+
+status: untested
+
+tested_on: []
+
+issues: []

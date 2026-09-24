@@ -1,0 +1,15 @@
+feature: Webcam
+category: Hardware
+
+tests:
+  - Detect webcam
+  - Preview video
+  - Record video
+  - Use webcam in application
+  - Stop and release webcam
+
+status: untested
+
+tested_on: []
+
+issues: []

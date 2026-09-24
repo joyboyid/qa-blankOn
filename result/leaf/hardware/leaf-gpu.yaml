@@ -1,0 +1,16 @@
+feature: GPU
+category: Hardware
+
+tests:
+  - Detect GPU device
+  - Load correct driver
+  - Correct display resolution
+  - Hardware acceleration
+  - External monitor (if available)
+  - Suspend / resume does not break display
+
+status: untested
+
+tested_on: []
+
+issues: []

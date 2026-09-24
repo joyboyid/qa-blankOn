@@ -1,0 +1,17 @@
+feature: Bluetooth
+category: Hardware
+
+tests:
+  - Detect Bluetooth adapter
+  - Turn on / off
+  - Scan devices
+  - Pair device
+  - Connect audio device
+  - Disconnect
+  - Reconnect after reboot
+
+status: untested
+
+tested_on: []
+
+issues: []

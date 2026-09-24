@@ -1,0 +1,16 @@
+feature: Audio
+category: Hardware
+
+tests:
+  - Detect audio devices
+  - Play audio
+  - Record audio
+  - Detect headphone jack
+  - Switch input / output devices
+  - Adjust volume
+
+status: untested
+
+tested_on: []
+
+issues: []

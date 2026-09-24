@@ -1,0 +1,22 @@
+feature: Wi-Fi
+category: Hardware
+
+tests:
+  - Detect Wi-Fi adapter
+  - Scan access points
+  - Connect WPA2
+  - Connect WPA3
+  - Disconnect
+  - Reconnect after reboot
+  - Reconnect after suspend
+
+status: partial
+
+tested_on:
+  - laptop: ThinkPad T14
+    chipset: Intel AX201
+    result: pass
+
+issues:
+  - "#123"
+  - "#147"
