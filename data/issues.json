@@ -1,5 +1,14 @@
 [
   {
+    "created_at": "2026-10-07T09:07:00Z",
+    "html_url": "https://github.com/BlankOn/blankon-linux/issues/130",
+    "labels": [],
+    "number": 130,
+    "state": "open",
+    "title": "Teras: download page always uses the 26.09 fallback link",
+    "updated_at": "2026-10-07T09:07:00Z"
+  },
+  {
     "created_at": "2026-10-06T10:47:42Z",
     "html_url": "https://github.com/BlankOn/blankon-linux/issues/128",
     "labels": [],
