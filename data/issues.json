@@ -1,5 +1,14 @@
 [
   {
+    "created_at": "2026-10-11T13:09:06Z",
+    "html_url": "https://github.com/BlankOn/blankon-linux/issues/133",
+    "labels": [],
+    "number": 133,
+    "state": "open",
+    "title": "Weekly 2026-10-11",
+    "updated_at": "2026-10-11T14:28:47Z"
+  },
+  {
     "created_at": "2026-10-07T09:07:00Z",
     "html_url": "https://github.com/BlankOn/blankon-linux/issues/130",
     "labels": [],
@@ -40,9 +49,9 @@
     "html_url": "https://github.com/BlankOn/blankon-linux/issues/115",
     "labels": [],
     "number": 115,
-    "state": "open",
+    "state": "closed",
     "title": "Improve untung: diff arsip against arsip-dev too.",
-    "updated_at": "2026-09-13T17:47:19Z"
+    "updated_at": "2026-10-11T13:37:57Z"
   },
   {
     "created_at": "2026-09-13T17:46:12Z",
