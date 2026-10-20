@@ -1,5 +1,68 @@
 [
   {
+    "created_at": "2026-10-20T20:50:49Z",
+    "html_url": "https://github.com/BlankOn/blankon-linux/issues/150",
+    "labels": [],
+    "number": 150,
+    "state": "open",
+    "title": "Race boot praya.service (WantedBy=default.target): portal-gtk gagal 'cannot open display' 127 detik tiap boot",
+    "updated_at": "2026-10-20T20:50:49Z"
+  },
+  {
+    "created_at": "2026-10-20T19:57:51Z",
+    "html_url": "https://github.com/BlankOn/blankon-linux/issues/149",
+    "labels": [],
+    "number": 149,
+    "state": "open",
+    "title": "Warning PAM MiniPolicy tiap sesi: systemd 262~rc1 pasang config PAM di /usr/lib/pam.d yang ditolak libpam Debian",
+    "updated_at": "2026-10-20T19:57:51Z"
+  },
+  {
+    "created_at": "2026-10-20T19:37:55Z",
+    "html_url": "https://github.com/BlankOn/blankon-linux/issues/148",
+    "labels": [],
+    "number": 148,
+    "state": "open",
+    "title": "RFE: supergfxd/asusctl tidak ada di repo — dGPU ROG idle tetap 10–15 W (gnome-shell pegang konteks EGL)",
+    "updated_at": "2026-10-20T19:57:53Z"
+  },
+  {
+    "created_at": "2026-10-20T19:37:14Z",
+    "html_url": "https://github.com/BlankOn/blankon-linux/issues/147",
+    "labels": [],
+    "number": 147,
+    "state": "open",
+    "title": "10_mutter-common.gschema.override menyetel xwayland-native-scaling: 'Unknown experimental feature' tiap sesi",
+    "updated_at": "2026-10-20T19:37:14Z"
+  },
+  {
+    "created_at": "2026-10-20T19:37:12Z",
+    "html_url": "https://github.com/BlankOn/blankon-linux/issues/146",
+    "labels": [],
+    "number": 146,
+    "state": "open",
+    "title": "gkr-pam: unable to locate daemon control file setiap login — keyring tidak pernah unlock otomatis",
+    "updated_at": "2026-10-20T19:37:12Z"
+  },
+  {
+    "created_at": "2026-10-20T19:37:10Z",
+    "html_url": "https://github.com/BlankOn/blankon-linux/issues/145",
+    "labels": [],
+    "number": 145,
+    "state": "open",
+    "title": "Instalasi segar tanpa wsdd: browse jaringan Nautilus mati dari boot pertama (72 error/sesi)",
+    "updated_at": "2026-10-20T19:37:10Z"
+  },
+  {
+    "created_at": "2026-10-20T18:41:45Z",
+    "html_url": "https://github.com/BlankOn/blankon-linux/issues/144",
+    "labels": [],
+    "number": 144,
+    "state": "open",
+    "title": "Siapkan arsip-sid untuk jahitan harian",
+    "updated_at": "2026-10-20T18:41:45Z"
+  },
+  {
     "created_at": "2026-10-19T13:17:56Z",
     "html_url": "https://github.com/BlankOn/blankon-linux/issues/140",
     "labels": [],
@@ -130,9 +193,9 @@
     "html_url": "https://github.com/BlankOn/blankon-linux/issues/106",
     "labels": [],
     "number": 106,
-    "state": "open",
+    "state": "closed",
     "title": "Zoom sering hang di jahitan",
-    "updated_at": "2026-05-10T15:40:54Z"
+    "updated_at": "2026-10-20T18:44:25Z"
   },
   {
     "created_at": "2026-04-22T03:12:56Z",
@@ -238,9 +301,9 @@
     "html_url": "https://github.com/BlankOn/blankon-linux/issues/94",
     "labels": [],
     "number": 94,
-    "state": "open",
+    "state": "closed",
     "title": "Public relation: contact Debian Census to renew data",
-    "updated_at": "2026-03-07T13:15:36Z"
+    "updated_at": "2026-10-20T18:42:56Z"
   },
   {
     "created_at": "2026-03-07T13:14:54Z",
@@ -328,18 +391,18 @@
     "html_url": "https://github.com/BlankOn/blankon-linux/issues/84",
     "labels": [],
     "number": 84,
-    "state": "open",
+    "state": "closed",
     "title": "Release blockers",
-    "updated_at": "2026-09-13T11:24:49Z"
+    "updated_at": "2026-10-20T18:43:39Z"
   },
   {
     "created_at": "2026-02-18T23:29:05Z",
     "html_url": "https://github.com/BlankOn/blankon-linux/issues/83",
     "labels": [],
     "number": 83,
-    "state": "open",
+    "state": "closed",
     "title": "Rsync arsip-dev to arsip",
-    "updated_at": "2026-03-22T17:25:08Z"
+    "updated_at": "2026-10-20T18:43:26Z"
   },
   {
     "created_at": "2026-02-18T16:46:21Z",
