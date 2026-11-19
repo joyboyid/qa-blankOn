@@ -1,5 +1,23 @@
 [
   {
+    "created_at": "2026-11-19T04:09:47Z",
+    "html_url": "https://github.com/BlankOn/blankon-linux/issues/163",
+    "labels": [],
+    "number": 163,
+    "state": "open",
+    "title": "Feature request: adopt a refreshed official BlankOn wallpaper set (examples provided)",
+    "updated_at": "2026-11-19T04:12:46Z"
+  },
+  {
+    "created_at": "2026-11-19T00:38:33Z",
+    "html_url": "https://github.com/BlankOn/blankon-linux/issues/161",
+    "labels": [],
+    "number": 161,
+    "state": "open",
+    "title": "LAN/network icon shows a question mark despite working internet (connectivity check false negative)",
+    "updated_at": "2026-11-19T01:51:21Z"
+  },
+  {
     "created_at": "2026-11-15T12:10:15Z",
     "html_url": "https://github.com/BlankOn/blankon-linux/issues/160",
     "labels": [],
